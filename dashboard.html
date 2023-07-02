@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linkcut dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+   
+    <header class="w-full h-auto py-[1.25rem] md:px-[4rem] px-[1.25rem] bg-[#FFF] flex flex-row md:items-center items-start justify-between shadow-[0px_1px_28px_0px_rgba(0,0,0,0.05)]">
+
+        <div class="w-fit h-auto flex md:flex-row flex-col md:gap-[4rem] gap-[1.5rem] items-center justify-start">
+
+            <svg width="85.33" height="24" viewBox="0 0 128 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Frame">
+                <path id="Vector" d="M2.23199 30V3.93602H8.13599V30H2.23199ZM13.3231 8.47202V3.93602H19.2271V8.47202H13.3231ZM13.3231 30V11.028H19.2271V30H13.3231ZM24.4142 30V11.028H29.2742L29.7062 13.728H29.9582C30.4382 13.08 30.9902 12.516 31.6142 12.036C32.2382 11.556 32.9462 11.196 33.7382 10.956C34.5302 10.716 35.3702 10.596 36.2582 10.596C37.6262 10.596 38.7782 10.848 39.7142 11.352C40.6742 11.856 41.4062 12.612 41.9102 13.62C42.4142 14.628 42.6662 15.912 42.6662 17.472V30H36.7622V18.3C36.7622 17.772 36.6902 17.328 36.5462 16.968C36.4262 16.584 36.2462 16.26 36.0062 15.996C35.7662 15.732 35.4662 15.54 35.1062 15.42C34.7462 15.3 34.3382 15.24 33.8822 15.24C33.1862 15.24 32.5742 15.408 32.0462 15.744C31.5182 16.056 31.0982 16.488 30.7862 17.04C30.4742 17.568 30.3182 18.192 30.3182 18.912V30H24.4142ZM47.7748 30V3.90002H53.6788V18.66L60.0868 11.028H66.9988L60.2668 18.552L67.2508 30H60.5188L56.3068 22.62L53.6788 25.176V30H47.7748ZM78.2713 30.432C76.1833 30.432 74.4073 30.072 72.9433 29.352C71.4793 28.632 70.3513 27.54 69.5593 26.076C68.7913 24.588 68.4073 22.728 68.4073 20.496C68.4073 18.264 68.8033 16.416 69.5953 14.952C70.3873 13.464 71.5153 12.36 72.9793 11.64C74.4433 10.92 76.2073 10.56 78.2713 10.56C79.6153 10.56 80.8513 10.716 81.9793 11.028C83.1313 11.34 84.1273 11.82 84.9673 12.468C85.8313 13.116 86.4913 13.932 86.9473 14.916C87.4033 15.9 87.6313 17.076 87.6313 18.444H81.8353C81.8353 17.628 81.6913 16.956 81.4033 16.428C81.1393 15.9 80.7433 15.504 80.2153 15.24C79.6873 14.976 79.0273 14.844 78.2353 14.844C77.3233 14.844 76.5793 15.036 76.0033 15.42C75.4513 15.804 75.0433 16.368 74.7793 17.112C74.5153 17.856 74.3833 18.78 74.3833 19.884V21.18C74.3833 22.26 74.5153 23.172 74.7793 23.916C75.0433 24.66 75.4753 25.224 76.0753 25.608C76.6753 25.968 77.4433 26.148 78.3793 26.148C79.1953 26.148 79.8673 26.028 80.3953 25.788C80.9473 25.524 81.3673 25.128 81.6553 24.6C81.9433 24.048 82.0873 23.364 82.0873 22.548H87.6313C87.6313 23.868 87.4033 25.032 86.9473 26.04C86.4913 27.024 85.8433 27.84 85.0033 28.488C84.1633 29.136 83.1673 29.628 82.0153 29.964C80.8633 30.276 79.6153 30.432 78.2713 30.432ZM98.3703 30.432C96.3303 30.432 94.7463 29.868 93.6183 28.74C92.5143 27.612 91.9623 25.884 91.9623 23.556V11.028H97.8663V22.728C97.8663 23.232 97.9263 23.676 98.0463 24.06C98.1903 24.444 98.3823 24.768 98.6223 25.032C98.8623 25.296 99.1623 25.488 99.5223 25.608C99.9063 25.728 100.314 25.788 100.746 25.788C101.442 25.788 102.054 25.632 102.582 25.32C103.11 24.984 103.53 24.54 103.842 23.988C104.154 23.412 104.31 22.788 104.31 22.116V11.028H110.214V30H105.354L104.994 27.3H104.742C104.31 27.924 103.758 28.476 103.086 28.956C102.438 29.436 101.706 29.796 100.89 30.036C100.098 30.3 99.2583 30.432 98.3703 30.432ZM122.091 30.432C120.867 30.432 119.823 30.252 118.959 29.892C118.119 29.508 117.483 28.944 117.051 28.2C116.643 27.456 116.439 26.556 116.439 25.5V15.312H113.955V11.028H116.619L117.843 5.48402H122.307V11.028H126.015V15.312H122.307V24.06C122.307 24.732 122.439 25.248 122.703 25.608C122.967 25.968 123.447 26.148 124.143 26.148H126.015V29.82C125.703 29.916 125.307 30.012 124.827 30.108C124.371 30.228 123.903 30.312 123.423 30.36C122.943 30.408 122.499 30.432 122.091 30.432Z" fill="#1A1A19"/>
+                </g>
+            </svg>
+
+            <div class="w-fit h-auto">
+                <button id="new-link-button" class="flex flex-row gap-[0.5rem] items-center justify-center mt-4 w-fit h-auto py-[0.75rem] px-[1rem] bg-[#CCD5AE] hover:bg-[#E9EDC9] text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19] hover:shadow-[2px_4px_16px_0px_rgba(0,0,0,0.25)]">
+                    <i class="fa-solid fa-plus"></i>                        
+                    New link
+                </button>
+                
+            </div>
+
+         </div>  
+         
+        <div>
+            <!-- User profile -->
+            <!-- <div class="relative w-fit h-auto flex flex-row gap-[0.5rem] md:gap-[2.5rem] items-center">
+                <div class="w-fit h-auto flex flex-row gap-[0.5rem] items-center">
+                    <div class="flex items-center justify-center p-[0.625rem] w-[2rem] h-[2rem] rounded-full bg-[#525445]">
+                        <p class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#FFF]">A</p>
+                    </div>
+
+                    <div class="md:w-fit md:h-auto">
+                        <p class="hidden md:block md:text-center md:font-['space_grotesk'] md:text-lg text-base md:font-normal md:text-[#1A1A19]">Abegunde Precious</p>
+                    </div>
+
+                </div>
+
+                <div class="w-fit h-auto">
+                    <i class="fa-solid fa-caret-down" style="color: #1a1a19;"></i>
+                    <i class="fa-solid fa-caret-up hidden" style="color: #1a1a19;"></i>
+                </div>
+            </div> -->
+
+            <div class="relative w-fit h-auto flex flex-row gap-[0.5rem] md:gap-[2.5rem] items-center">
+                <div class="w-fit h-auto flex flex-row gap-[0.5rem] items-center">
+                  <div class="flex items-center justify-center p-[0.625rem] w-[2rem] h-[2rem] rounded-full bg-[#525445]">
+                    <p class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#FFF]">A</p>
+                  </div>
+              
+                  <div class="md:w-fit md:h-auto">
+                    <p class="hidden md:block md:text-center md:font-['space_grotesk'] md:text-lg text-base md:font-normal md:text-[#1A1A19]">Abegunde Precious</p>
+                  </div>
+                </div>
+              
+                <div class="relative mt-2 md:mt-0">
+                  <!-- Dropdown Toggle -->
+                  <button class="flex items-center justify-center w-6 h-6 md:w-8 md:h-8">
+                    <i id="toggleIcon" class="fa-solid fa-caret-down" style="color: #1a1a19;"></i>
+                  </button>
+              
+                  <!-- Dropdown Menu -->
+                  <div id="dropdownMenu" class="absolute z-10 mt-2 right-0 transform translate-x-[-50%] bg-white shadow-lg hidden">
+                    <ul class="py-1">
+                      <li>
+                        <a href="#" class="block px-[0.5rem] py-2 hover:bg-[#E9EDC9] font-['space_grotesk'] md:text-lg text-base text-[#1A1A19]">Change Password</a>
+                      </li>
+                      <li>
+                        <a href="./login.html" class="block px-[0.5rem] py-2 hover:bg-[#E9EDC9] font-['space_grotesk'] md:text-lg text-base text-[#1A1A19]">Log Out</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            
+
+        </div> 
+
+
+
+    </header>
+
+    <div class="mt-[0.06rem] w-full h-auto md:py-[2rem] py-[1rem] md:px-[4rem] px-[1.25rem] bg-[#F8F8F7] flex flex-col md:gap-[2rem] gap-[1.5rem]">
+
+        <h2 class="text-left font-['space_grotesk'] md:text-3xl text-2xl font-bold text-[#1A1A19]">Created Links</h2>
+
+        <!-- Group of link cards -->
+        <div class="w-full h-auto flex md:flex-row flex-col md:flex-wrap gap-[1.25rem] items-start justify-between md:content-start">
+
+          <div class="md:w-[30%] w-full h-auto p-[1.25rem] flex flex-col md:gap-[0.75rem] gap-[0.75rem] bg-[#FFF]">
+
+            <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+                    <a href="#" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">linkcut.com/new-link</a>
+                    <i class="fa-regular fa-copy" style="color: #1a1a19;"></i>
+                </div>
+
+                <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
+                    <i id="editLinkButton" class="fa-solid fa-pen cursor-pointer" style="color: #b5b6af;"></i>
+                    <i class="fa-solid fa-trash cursor-pointer" style="color: #b5b6af;"></i>
+                </div>
+
+            </div>
+
+            <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+                <a href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">areolas.com/must-be-pretty-nice</a>
+                <p class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Created on June 15, 2023</p>
+
+                <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                    <p>55 clicks</p>
+                    <p id="viewDetailsButton" class="text-right font-['space_grotesk'] text-base font-bold text-[#525445] underline cursor-pointer">View details</p>
+                </div>
+            </div>
+
+          </div> 
+          
+          <div class="md:w-[30%] w-full h-auto p-[1.25rem] flex flex-col md:gap-[0.75rem] gap-[0.75rem] bg-[#FFF]">
+
+            <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+                    <a href="#" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">linkcut.com/new-link</a>
+                    <i class="fa-regular fa-copy" style="color: #1a1a19;"></i>
+                </div>
+
+                <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
+                    <i class="fa-solid fa-pen" style="color: #b5b6af;"></i>
+                    <i class="fa-solid fa-trash" style="color: #b5b6af;"></i>
+                </div>
+
+            </div>
+
+            <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+                <a href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">areolas.com/must-be-pretty-nice</a>
+                <p class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Created on June 15, 2023</p>
+
+                <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                    <p>55 clicks</p>
+                    <p class="text-right font-['space_grotesk'] text-base font-bold text-[#525445] underline cursor-pointer">View details</p>
+                </div>
+            </div>
+
+          </div>
+
+          <div class="md:w-[30%] w-full h-auto p-[1.25rem] flex flex-col md:gap-[0.75rem] gap-[0.75rem] bg-[#FFF]">
+
+            <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+                    <a href="#" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">linkcut.com/new-link</a>
+                    <i class="fa-regular fa-copy" style="color: #1a1a19;"></i>
+                </div>
+
+                <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
+                    <i class="fa-solid fa-pen" style="color: #b5b6af;"></i>
+                    <i class="fa-solid fa-trash" style="color: #b5b6af;"></i>
+                </div>
+
+            </div>
+
+            <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+                <a href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">areolas.com/must-be-pretty-nice</a>
+                <p class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Created on June 15, 2023</p>
+
+                <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                    <p>55 clicks</p>
+                    <p class="text-right font-['space_grotesk'] text-base font-bold text-[#525445] underline cursor-pointer">View details</p>
+                </div>
+            </div>
+
+          </div>
+
+          <div class="md:w-[30%] w-full h-auto p-[1.25rem] flex flex-col md:gap-[0.75rem] gap-[0.75rem] bg-[#FFF]">
+
+            <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+                    <a href="#" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">linkcut.com/new-link</a>
+                    <i class="fa-regular fa-copy" style="color: #1a1a19;"></i>
+                </div>
+
+                <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
+                    <i class="fa-solid fa-pen" style="color: #b5b6af;"></i>
+                    <i class="fa-solid fa-trash" style="color: #b5b6af;"></i>
+                </div>
+
+            </div>
+
+            <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+                <a href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">areolas.com/must-be-pretty-nice</a>
+                <p class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Created on June 15, 2023</p>
+
+                <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                    <p>55 clicks</p>
+                    <p class="text-right font-['space_grotesk'] text-base font-bold text-[#525445] underline cursor-pointer">View details</p>
+                </div>
+            </div>
+
+          </div> 
+          
+          <div class="md:w-[30%] w-full h-auto p-[1.25rem] flex flex-col md:gap-[0.75rem] gap-[0.75rem] bg-[#FFF]">
+
+            <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+                    <a href="#" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">linkcut.com/new-link</a>
+                    <i class="fa-regular fa-copy" style="color: #1a1a19;"></i>
+                </div>
+
+                <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
+                    <i class="fa-solid fa-pen" style="color: #b5b6af;"></i>
+                    <i class="fa-solid fa-trash" style="color: #b5b6af;"></i>
+                </div>
+
+            </div>
+
+            <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+                <a href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">areolas.com/must-be-pretty-nice</a>
+                <p class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Created on June 15, 2023</p>
+
+                <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                    <p>55 clicks</p>
+                    <p class="text-right font-['space_grotesk'] text-base font-bold text-[#525445] underline cursor-pointer">View details</p>
+                </div>
+            </div>
+
+          </div>
+
+          <div class="md:w-[30%] w-full h-auto p-[1.25rem] flex flex-col md:gap-[0.75rem] gap-[0.75rem] bg-[#FFF]">
+
+            <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+                    <a href="#" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">linkcut.com/new-link</a>
+                    <i class="fa-regular fa-copy" style="color: #1a1a19;"></i>
+                </div>
+
+                <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
+                    <i class="fa-solid fa-pen" style="color: #b5b6af;"></i>
+                    <i class="fa-solid fa-trash" style="color: #b5b6af;"></i>
+                </div>
+
+            </div>
+
+            <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+                <a href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">areolas.com/must-be-pretty-nice</a>
+                <p class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Created on June 15, 2023</p>
+
+                <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                    <p>55 clicks</p>
+                    <p class="text-right font-['space_grotesk'] text-base font-bold text-[#525445] underline cursor-pointer">View details</p>
+                </div>
+            </div>
+
+          </div>
+
+          <div class="md:w-[30%] w-full h-auto p-[1.25rem] flex flex-col md:gap-[0.75rem] gap-[0.75rem] bg-[#FFF]">
+
+            <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+                    <a href="#" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">linkcut.com/new-link</a>
+                    <i class="fa-regular fa-copy" style="color: #1a1a19;"></i>
+                </div>
+
+                <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
+                    <i class="fa-solid fa-pen" style="color: #b5b6af;"></i>
+                    <i class="fa-solid fa-trash" style="color: #b5b6af;"></i>
+                </div>
+
+            </div>
+
+            <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+                <a href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">areolas.com/must-be-pretty-nice</a>
+                <p class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Created on June 15, 2023</p>
+
+                <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                    <p>55 clicks</p>
+                    <p class="text-right font-['space_grotesk'] text-base font-bold text-[#525445] underline cursor-pointer">View details</p>
+                </div>
+            </div>
+
+          </div> 
+          
+          <div class="md:w-[30%] w-full h-auto p-[1.25rem] flex flex-col md:gap-[0.75rem] gap-[0.75rem] bg-[#FFF]">
+
+            <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+                    <a href="#" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">linkcut.com/new-link</a>
+                    <i class="fa-regular fa-copy" style="color: #1a1a19;"></i>
+                </div>
+
+                <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
+                    <i class="fa-solid fa-pen" style="color: #b5b6af;"></i>
+                    <i class="fa-solid fa-trash" style="color: #b5b6af;"></i>
+                </div>
+
+            </div>
+
+            <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+                <a href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">areolas.com/must-be-pretty-nice</a>
+                <p class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Created on June 15, 2023</p>
+
+                <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                    <p>55 clicks</p>
+                    <p class="text-right font-['space_grotesk'] text-base font-bold text-[#525445] underline cursor-pointer">View details</p>
+                </div>
+            </div>
+
+          </div>
+
+          <div class="md:w-[30%] w-full h-auto p-[1.25rem] flex flex-col md:gap-[0.75rem] gap-[0.75rem] bg-[#FFF]">
+
+            <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+                    <a href="#" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">linkcut.com/new-link</a>
+                    <i class="fa-regular fa-copy" style="color: #1a1a19;"></i>
+                </div>
+
+                <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
+                    <i class="fa-solid fa-pen" style="color: #b5b6af;"></i>
+                    <i class="fa-solid fa-trash" style="color: #b5b6af;"></i>
+                </div>
+
+            </div>
+
+            <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+                <a href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">areolas.com/must-be-pretty-nice</a>
+                <p class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Created on June 15, 2023</p>
+
+                <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                    <p>55 clicks</p>
+                    <p class="text-right font-['space_grotesk'] text-base font-bold text-[#525445] underline cursor-pointer">View details</p>
+                </div>
+            </div>
+
+          </div>
+
+          
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="w-full h-auto flex flex-row gap-[1rem] items-center justify-end">
+            <div class="w-fit h-auto flex flex-row gap-[0.35rem] items-center">
+                <i class="fa-solid fa-caret-left" style="color: #dcddd9;"></i>
+                <p class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#DCDDD9]">Prev</p>
+            </div>
+            
+            <div class="w-fit h-auto flex flex-row-reverse gap-[0.35rem] items-center">
+                <i class="fa-solid fa-caret-right" style="color: #525445;" ></i>
+                <p class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#525445]">Next</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Create Link Modal -->
+    <!-- Modal container -->
+    <div id="create-link-modal" class="fixed inset-0 flex items-center justify-center z-50 bg-[#1A1A19] bg-opacity-[0.7] hidden">
+        <!-- Modal Content -->
+        <div class="bg-white md:w-[50%] md:h-auto h-screen w-full p-[1.25rem] shadow-lg flex flex-col md:justify-center gap[3-rem]" >
+            <div class="w-fit h-auto self-end">
+                <i id="createLinkCancel" class="fa-solid fa-circle-xmark text-[#1A1A19] cursor-pointer"></i>
+            </div>
+
+            <div class="w-full h-auto flex flex-col gap-[1.5rem]">
+                <div class="flex flex-col md:gap-[0.5rem] gap-[0.3rem]">
+                    <h3 class="text-center font-['space_grotesk'] md:text-3xl text-2xl font-bold text-[#1A1A19]">Create a new link</h3>
+                    <p class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Generate a shortened URL and an optional QR code below.</p>
+                </div>
+
+                <form id="createLinkForm" class="w-full h-auto flex flex-col justify-center items-center gap-[0.75rem]">
+                    
+                    <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
+                        <label for="destinationURL" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Destination URL*</label>
+                        <input type="url" name="destinationURL" id="destinationURL" placeholder="Destination URL" class="w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                        <p class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#EB5757]"></p>
+                    </div>
+
+                    <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
+                        <label for="backHalf" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Custom back-half (optional)</label>
+                        <input type="text" name="backHalf" id="backHalf" placeholder="e.g linkcut.com/example-back-half" class="w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                        <p class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#EB5757]"></p>
+                    </div>
+                    
+                    <!-- Add more form inputs here as needed -->
+    
+                    <!-- Submit button -->
+                    <button type="submit" class="mt-4 w-fit h-auto py-[0.75rem] px-[1rem] bg-[#1A1A19] hover:bg-[#515445] text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#FFF] hover:shadow-[2px_4px_16px_0px_rgba(0,0,0,0.25)]">Create link</button>
+                </form> 
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- Edit link modal -->
+     <!-- Modal container -->
+     <div id="editLinkModal" class="fixed inset-0 flex flex-col items-center justify-center z-50 bg-[#1A1A19] bg-opacity-[0.7] hidden">
+
+        <!-- Success Message -->
+        <div class="hidden md:w-[20%] w-70% flex-row items-center justify-start bg-white p-[0.5rem] mb-[1rem]">
+            <p class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-green-500">Changes saved successfully!</p>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="bg-white md:w-[50%] md:h-auto h-screen w-full p-[1.25rem] shadow-lg flex flex-col md:justify-center gap[3-rem]" >
+            <div class="w-fit h-auto self-end">
+                <i id="closeEditLinkModal" class="fa-solid fa-circle-xmark text-[#1A1A19] cursor-pointer"></i>
+            </div>
+
+            <div class="w-full h-auto flex flex-col gap-[1.5rem]">
+                <div class="flex flex-col md:gap-[0.5rem] gap-[0.3rem]">
+                    <h3 class="text-center font-['space_grotesk'] md:text-3xl text-2xl font-bold text-[#1A1A19]">Create a new link</h3>
+                    <p class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Generate a shortened URL and an optional QR code below.</p>
+                </div>
+
+                <form class="w-full h-auto flex flex-col justify-center items-center gap-[0.75rem]">
+                    
+                    <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
+                        <label for="editDestinationURL" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Destination URL*</label>
+                        <input type="url" name="editDestinationURL" id="editDestinationURL" placeholder="Destination URL" value="https://www.w3schools.com/tags/att_input_value.asp#:~:text=The%20value%20attribute%20specifies%20the,value%20of%20the%20input%20field" class="w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                    </div>
+
+                    <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
+                        <label for="editBackHalf" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Custom back-half (optional)</label>
+                        <input type="text" name="editBackHalf" id="editBackHalf" placeholder="e.g linkcut.com/example-back-half" value="new-link" class="w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                    </div>
+                    
+                    <!-- Add more form inputs here as needed -->
+    
+                    <!-- Submit button -->
+                    <button type="submit" class="mt-4 w-fit h-auto py-[0.75rem] px-[1rem] bg-[#1A1A19] hover:bg-[#515445] text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#FFF] hover:shadow-[2px_4px_16px_0px_rgba(0,0,0,0.25)]">Save changes</button>
+                </form> 
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Link Details Modal -->
+    <!-- Modal container -->
+    <div id="linkDetailsModal" class="flex fixed inset-0 h-screen w-screen items-center justify-center z-50 bg-[#1A1A19] bg-opacity-[0.7] hidden">
+
+        
+        <div class="md:max-h-[80vh] h-screen overflow-y-auto bg-[#F8F8F7] md:w-[70%] w-full p-[1.25rem] shadow-lg">
+            <!-- Modal Content -->
+            <div class=" flex flex-col md:justify-center gap-[3rem] " >
+                <div class="w-fit h-auto self-end sticky top-0 z-[80] bg-[#F8F8F7]">
+                    <i id="closeLinkDetails" class="fa-solid fa-circle-xmark text-[#1A1A19] cursor-pointer"></i>
+                </div>
+
+                <div class="w-full h-auto flex flex-col gap-[1.25rem]">
+
+                    <!-- Top content -->
+                    <div class="w-full h-auto flex flex-col gap-[1rem]">
+                        <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                            <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+                                <a href="#" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">linkcut.com/new-link</a>
+                                <i class="fa-regular fa-copy text-[#1a1a19]"></i>
+                            </div>
+            
+                            <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
+                                <i class="fa-solid fa-pen text-[#b5b6af] cursor-pointer"></i>
+                                <i class="fa-solid fa-trash text-[#EB5757] cursor-pointer"></i>
+                            </div>
+            
+                        </div>
+            
+                        <div class="w-full h-auto flex md:flex-row md:justify-between flex-col gap-[0.5rem]">
+                            <a href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">areolas.com/must-be-pretty-nice</a>
+                            <p class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Created on June 15, 2023</p>
+                        </div>
+                    </div>
+
+                    <!-- QR Code -->
+                    <div class="w-full h-auto flex flex-col gap-[1rem] p-[1rem] bg-white">
+                        <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem]">
+                                <h3 href="" class="text-left font-['space_grotesk'] md:text-2xl text-lg font-bold text-[#1A1A19]">QR code</h3>
+
+                                <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+                                    <div class="w-fit h-auto flex flex-row gap-[0.25rem] items-center cursor-pointer">
+                                        <p href="#" class="text-center font-['space_grotesk'] text-base font-normal text-[#525445]">Copy</p>
+                                        <i class="fa-regular fa-copy text-[#525445]"></i>
+                                    </div>
+                                    <div class="w-fit h-auto flex flex-row gap-[0.25rem] items-center cursor-pointer">
+                                        <p href="#" class="text-center font-['space_grotesk'] text-base font-normal text-[#525445]">Save</p>
+                                        <i class="fa-solid fa-download text-[#525445]"></i>
+                                    </div>                          
+
+                                </div>
+                        </div> 
+
+                        <div class="w-fit h-auto">
+                            <img src="./assets/sample-qr.png" alt="">
+                        </div>
+
+                    </div>
+
+                    <!-- Clicks and Sources -->
+                    <div class="w-full h-auto flex md:flex-row flex-col md:gap-[2rem] gap-[1.25rem] md:items-start">
+                        <!-- Clicks -->
+                        <div class="md:w-[30%] w-full h-auto flex flex-col md:gap-[1rem] gap-[0.5rem] items-center justify-center bg-[#E9EDC9] p-[1.25rem]">
+                            <h2 class="text-left font-['space_grotesk'] text-[4rem] font-bold text-[#1A1A19] leading-[120%]" >
+                                170
+                            </h2>
+                            <p class="text-left font-['space_grotesk'] text-[1.5rem] font-bold text-[#1A1A19]">Total clicks</p>
+                        </div>
+
+                        <!-- Sources -->
+                        <div class="md:w-[70%] w-full h-auto flex flex-col gap-[1rem] p-[1rem] bg-white">
+                            <h3 class="text-left font-['space_grotesk'] md:text-2xl text-lg font-bold text-[#1A1A19]">Sources</h3>
+
+                            <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Whatsapp</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">50</p>
+                                </div>
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Facebook</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">50</p>
+                                </div>
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Instagram</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">10</p>
+                                </div>
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Twitter</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">10</p>
+                                </div>
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Others</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">5</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Devices and Location -->
+                    <div class="w-full h-auto flex md:flex-row flex-col md:gap-[2rem] gap-[1.25rem] md:items-start">
+                        <!-- Devices -->
+                        <div class="md:w-[50%] w-full h-auto flex flex-col gap-[1rem] p-[1rem] bg-white">
+                            <h3 class="text-left font-['space_grotesk'] md:text-2xl text-lg font-bold text-[#1A1A19]">Devices</h3>
+
+                            <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Windows</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">50</p>
+                                </div>
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">MacOS</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">50</p>
+                                </div>
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Android</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">10</p>
+                                </div>
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">IOS</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">10</p>
+                                </div>
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Others</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">5</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="md:w-[50%] w-full h-auto flex flex-col gap-[1rem] p-[1rem] bg-white">
+                            <h3 class="text-left font-['space_grotesk'] md:text-2xl text-lg font-bold text-[#1A1A19]">Location</h3>
+
+                            <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Lagos, Nigeria</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">50</p>
+                                </div>
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Nairobi, Kenya</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">50</p>
+                                </div>
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Ibadan, Nigeria</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">10</p>
+                                </div>
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">London, UK</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">10</p>
+                                </div>
+                                <div class="w-full h-auto flex flex-row justify-between gap-[0.5rem]">
+                                    <p href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Others</p>
+                                    <p class="text-left font-['space_grotesk'] text-base font-bold text-[#1A1A19]">5</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Change Password Modal -->
+     <!-- Modal container -->
+     <div class="fixed inset-0 flex items-center justify-center z-50 bg-[#1A1A19] bg-opacity-[0.7] hidden">
+        <!-- Modal Content -->
+        <div class="bg-white md:w-[35%] md:h-auto h-screen w-full p-[1.25rem] shadow-lg flex flex-col md:justify-center gap[3-rem]" >
+            <div class="w-fit h-auto self-end">
+                <i class="fa-solid fa-circle-xmark text-[#1A1A19] cursor-pointer"></i>
+            </div>
+
+            <div class="w-full h-auto flex flex-col gap-[1.5rem]">
+                <div class="flex flex-col md:gap-[0.5rem] gap-[0.3rem]">
+                    <h3 class="text-center font-['space_grotesk'] md:text-3xl text-2xl font-bold text-[#1A1A19]">Change Password</h3>
+                </div>
+
+                <form class="w-full h-auto flex flex-col justify-center items-center gap-[1rem]">
+
+                    <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
+                        <label for="userpassword" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Current Password*</label>
+                        <input type="password" name="userpassword" id="userpassword" placeholder="Enter a strong password" class="w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                        <a href="./resetPassword.html" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#525445] underline">Forgot password</a>
+                    </div>
+
+                    
+                    <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
+                        <label for="userNewPassword" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">New Password*</label>
+                        <input type="password" name="userNewPassword" id="userNewPassword" placeholder="New Password" class="w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                    </div>
+
+                    <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
+                        <label for="confirmNewPassword" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Confirm New Password*</label>
+                        <input type="password" name="confirmNewPassword" id="confirmNewPassword" placeholder="Confirm Password" class="w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                    </div>
+                    
+                    <!-- Add more form inputs here as needed -->
+    
+                    <!-- Submit button -->
+                    <button type="submit" class="mt-4 w-fit h-auto py-[0.75rem] px-[1rem] bg-[#1A1A19] hover:bg-[#515445] text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#FFF] hover:shadow-[2px_4px_16px_0px_rgba(0,0,0,0.25)]">Change password</button>
+                </form> 
+            </div>
+        </div>
+
+
+    </div>
+    
+    
+ 
+    <!-- <script>
+        function toggleDropdown() {
+          const dropdownMenu = document.getElementById('dropdownMenu');
+          const toggleIcon = document.getElementById('toggleIcon');
+      
+          dropdownMenu.classList.toggle('hidden');
+          toggleIcon.classList.toggle('fa-caret-down');
+          toggleIcon.classList.toggle('fa-caret-up');
+        }
+      </script> -->
+    <script src="./dashboard.js"></script>
+</body>
+</html>
