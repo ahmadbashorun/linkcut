@@ -1,4 +1,10 @@
 ////// Set new Password ////////
+
+// Add form submit event listener
+const setNewform = document.getElementById('setNewPwdform');
+setNewform.addEventListener('submit', submitForm);
+  
+
 // Function to validate and submit the form
 function submitForm(event) {
     event.preventDefault(); // Prevent form submission
@@ -17,19 +23,40 @@ function submitForm(event) {
         pwdErrorMessage.textContent = 'Passwords must be at least 6 characters long';
         pwdErrorMessage.classList.remove('hidden');
         return;
+    } else {
+        setNewPassword();
     }
   
-    if (newPassword !== confirmNewPassword) {
-        pwdErrorMessage.textContent = 'Passwords do not match';
-        pwdErrorMessage.classList.remove('hidden');
-        return;
-    }
+    
   
-    // If validation passes, redirect to login.html
-    window.location.href = 'login.html';
+   
 }
   
-// Add form submit event listener
-const setNewform = document.getElementById('setNewPwdform');
-setNewform.addEventListener('submit', submitForm);
-  
+
+//api call to 'https://linkcut-aomz.onrender.com' to set new password
+async function setNewPassword() { 
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email');
+    const pwdErrorMessage = document.getElementById('setNewPwdError');
+    const newPassword = document.getElementById('userNewPassword').value;
+    const confirmNewPassword = document.getElementById('confirmNewPassword').value;
+    const response = await fetch(`https://linkcut-aomz.onrender.com/auth/resetpassword/?email=${encodeURIComponent(email)}`, {
+        method: 'PUT',
+        body: JSON.stringify({password: newPassword, confirmPassword: confirmNewPassword }),
+        headers: { 'Content-Type': 'application/json' },
+    });
+    const data = await response.json();
+    if (data.success === true) {
+        window.location.href = `login.html`;
+    } else {
+        if (data.error === 'Please verify otp') {
+            window.location.href = `resetPassword.html`;
+        } else {
+            pwdErrorMessage.classList.remove("hidden");
+            pwdErrorMessage.textContent = data.error;
+            setTimeout(() => {
+                pwdErrorMessage.classList.add("hidden");
+            }, 2000);
+        } 
+    }
+}
