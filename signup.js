@@ -12,7 +12,7 @@ signupForm.addEventListener('submit', (event) => {
     for (let i = 0; i < errorMessages.length; i++) {
         errorMessages[i].textContent = '';
     }
-    const inputFields = document.getElementsByClassName('form-input');
+    const inputFields = document.getElementsByClassName('form-inputs');
     for (let i = 0; i < inputFields.length; i++) {
         inputFields[i].classList.remove('error');
         inputFields[i].style = "1px solid #8F9399"
@@ -26,7 +26,6 @@ signupForm.addEventListener('submit', (event) => {
     const password = document.getElementById('userPassword');
 
     let hasError = false;
-
     // Check first name
     if (firstName.value.trim() === '') {
         displayError(firstName, 'Please enter your first name.');
@@ -63,95 +62,57 @@ signupForm.addEventListener('submit', (event) => {
 
     // If there are errors, prevent form submission
     if (hasError) {
-    return;
+        return;
     }
-
-    // Redirect to dashboard on successful signup
-    window.location.href = 'dashboard.html';
+   
+   // api call to signup
+    signup();
 });
 
 // Function to display error message and add error styling
 function displayError(inputField, errorMessage) {
-const errorElement = inputField.nextElementSibling;
-errorElement.textContent = errorMessage;
-inputField.classList.add('error');
-inputField.style.border = "1px solid red"
+    const errorElement = inputField.nextElementSibling;
+    errorElement.textContent = errorMessage;
+    inputField.classList.add('error');
+    inputField.style.border = "1px solid red"
 }
 
 // Function to validate email using a simple regex pattern
 function isValidEmail(userEmail) {
-const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-return emailRegex.test(userEmail);
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    return emailRegex.test(userEmail);
 }
 
 
-
-
-/////// Log in //////
-// Function to handle form submission
-function handleFormSubmit(event) {
-    event.preventDefault(); // Prevent the form from being submitted
-  
-    // Get the input values
+//function  to call the api to signup
+function signup() {
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
     const userEmail = document.getElementById('userEmail').value;
-    const userPassword = document.getElementById('userPassword').value;
-  
-    // Perform validation (you can add your own validation logic here)
-  
-    // Placeholder code to simulate login/signup success
-    const success = true;
-  
-    if (success) {
-      // Redirect to the dashboard page
-      window.location.href = 'dashboard.html';
-    } else {
-      // Show the error message
-      const loginError = document.getElementById('loginError');
-      loginError.classList.remove('hidden');
+    const password = document.getElementById('userPassword').value;
+    const data = {
+        firstName,
+        lastName,
+        email: userEmail,
+        password
     }
+    console.log(data);
+    fetch('https://linkcut-aomz.onrender.com/auth/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+            if (data.success === true) {
+                window.location.href = 'login.html';
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 }
-  
-// Add event listener to the form submit event
-const loginForm = document.getElementById('loginForm');
-loginForm.addEventListener('submit', handleFormSubmit);
-
-
-
-
-
-
-  
-
-
-
-// /////// Dashboard ///////
-
-// //Open and close Create link modal
-// const newLinkButton = document.getElementById('new-link-button');
-// const createLinkModal = document.getElementById('create-link-modal');
-// const closeNewLinkIcon = document.getElementById('createLinkCancel');
-// const destinationURL = document.getElementById('destinationURL')
-
-// function openNewLinkModal(){
-//     createLinkModal.classList.remove('hidden')
-//     destinationURL.focus()
-// }
-// newLinkButton.addEventListener('click', openNewLinkModal)
-
-// // newLinkButton.addEventListener('click', function() {
-// //     createLinkModal.style.display = 'block';
-// // });
-
-// // closeIcon.addEventListener('click', function() {
-// //     closeNewLinkIcon.style.display = 'none';
-// // });
- 
-  
-  
-  
-  
-  
-  
-  
-
 

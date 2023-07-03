@@ -39,31 +39,31 @@
                     <div class="w-full h-auto flex flex-row justify-center items-center gap-[0.75rem]">
                         <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
                             <!-- <label for="otp" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Email*</label> -->
-                            <input type="number" name="otp" id="otp" class="otp-input w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                            <input type="text" min="0" max="9" maxlength="1" pattern="\d" name="otp" id="otp1" onkeyup="moveToNext(event, 'otp2')" class="otp-input w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
                         </div>
     
                         <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
                             <!-- <label for="otp" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Email*</label> -->
-                            <input type="text" name="otp" id="otp" class="otp-input w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                            <input type="text" min="0" max="9" maxlength="1" pattern="\d" name="otp" id="otp2" onkeyup="moveToNext(event, 'otp3')" class="otp-input w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
                         </div>
                         <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
                             <!-- <label for="otp" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Email*</label> -->
-                            <input type="text" name="otp" id="otp" class="otp-input w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
-                        </div>
-    
-                        <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
-                            <!-- <label for="otp" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Email*</label> -->
-                            <input type="text" name="otp" id="otp" class="otp-input w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                            <input type="text" min="0" max="9" maxlength="1" pattern="\d" name="otp" id="otp3" onkeyup="moveToNext(event, 'otp4')" class="otp-input w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
                         </div>
     
                         <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
                             <!-- <label for="otp" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Email*</label> -->
-                            <input type="text" name="otp" id="otp" class="otp-input w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                            <input type="text" min="0" max="9" maxlength="1" pattern="\d" name="otp" id="otp4" onkeyup="moveToNext(event, 'otp5')" class="otp-input w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
                         </div>
     
                         <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
                             <!-- <label for="otp" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Email*</label> -->
-                            <input type="text" name="otp" id="otp" class="otp-input w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                            <input type="text" min="0" max="9" maxlength="1" pattern="\d" name="otp" id="otp5" onkeyup="moveToNext(event, 'otp6')" class="otp-input w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                        </div>
+    
+                        <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
+                            <!-- <label for="otp" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Email*</label> -->
+                            <input type="text" min="0" max="9" maxlength="1" pattern="\d" name="otp" id="otp6"  class="otp-input w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
                         </div>
                     </div>
                     
@@ -86,6 +86,18 @@
             </div>
         </div>
 
-    <script src="./resetPassword.js"></script>
+        <script>
+            function moveToNext(event, nextInputId) {
+              const input = event.target;
+              const maxLength = parseInt(input.getAttribute('maxlength'));
+            
+              if (input.value.length >= maxLength) {
+                const nextInput = document.getElementById(nextInputId);
+                nextInput.focus();
+              }
+            }
+        </script>
+
+    <script src="./otp.js"></script>
 </body>
 </html>
