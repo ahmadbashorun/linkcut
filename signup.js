@@ -96,7 +96,6 @@ function signup() {
         email: userEmail,
         password
     }
-    console.log(data);
     fetch('https://linkcut-aomz.onrender.com/auth/register', {
         method: 'POST',
         headers: {
@@ -109,6 +108,16 @@ function signup() {
             console.log('Success:', data);
             if (data.success === true) {
                 window.location.href = 'login.html';
+            } else {
+                if (data.error === 'Duplicate key value entered') {
+                    const emailError = document.getElementById('userEmail').nextElementSibling;
+                    emailError.textContent = 'Email already exists.';
+                    emailError.classList.add('error');
+                     //remove after 2 seconds
+                    setTimeout(async () => {
+                        emailError.textContent = '';
+                    },2000)
+                }
             }
         })
         .catch((error) => {

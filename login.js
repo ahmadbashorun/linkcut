@@ -35,6 +35,9 @@ async function login() {
     } else {
         loginError.classList.remove('hidden');
         loginError.textContent = data.error;
+        setTimeout(() => {
+            loginError.textContent = '';
+        },2000)
     }
 }
 

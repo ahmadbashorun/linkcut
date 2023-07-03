@@ -13,19 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
           errorMessage.textContent = "Please enter your email address.";
           errorMessage.classList.remove("hidden");
       } else {
-        console.log('got here')
         errorMessage.classList.add("hidden");
         resetPassword();
       }
-      
-    
-
     });
 });
 
 // api call to 'https://linkcut-aomz.onrender.com' to reset password
 async function resetPassword() { 
-    let userEmail = document.getElementById('userEmail').value;
+  let userEmail = document.getElementById('userEmail').value;
     const errorMessage = document.getElementById('errorMessage');
     const response = await fetch('https://linkcut-aomz.onrender.com/auth/forgotpassword', {
         method: 'POST',
@@ -33,11 +29,13 @@ async function resetPassword() {
         headers: { 'Content-Type': 'application/json' },
     });
     const data = await response.json();
-    console.log(data);
     if (data.success === true) {
-        window.location.href = 'otp.html';
+        window.location.href = `otp.html?email=${encodeURIComponent(userEmail)}`;
     } else {
       errorMessage.classList.remove("hidden");
       errorMessage.textContent = data.error;
+      setTimeout(() => { 
+        errorMessage.textContent = '';
+      }, 2000);
     }
 }

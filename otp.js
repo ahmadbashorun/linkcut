@@ -19,12 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
         otp += otpInputs[i].value;
         }
         
-        console.log(otp);
         if (otp.length < 6) { 
             errorMessage.textContent = "Please enter a valid OTP";
             errorMessage.classList.remove("hidden");
         } else {
-            errorMessage.classList.add("hidden");
             verifyOtp(otp);
         }
   
@@ -34,12 +32,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //api call to 'https://linkcut-aomz.onrender.com' to verify OTP
-async  function verifyOtp(otp){
-    const response = await fetch('https://linkcut-aomz.onrender.com/auth/resetpassword', {
+async function verifyOtp(otp) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email');
+    
+    let errorMessage = document.getElementById("errorMessage");
+    const response = await fetch('https://linkcut-aomz.onrender.com/auth/verifyotp', {
         method: 'POST',
         body: JSON.stringify({ otp: otp }),
         headers: { 'Content-Type': 'application/json' },
     });
     const data = await response.json();
-    console.log(data);
+    if (data.success === true) {
+        window.location.href = `setNewPassword.html?email=${encodeURIComponent(email)}`;
+    } else {
+        errorMessage.textContent = data.error;
+    }
 }
