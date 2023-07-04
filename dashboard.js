@@ -133,3 +133,99 @@ function toggleDropdown() {
 
 toggleIcon.addEventListener('click', toggleDropdown)
 
+
+///Open and close change password modal
+const changePwdBtn = document.getElementById('changePwdButton')
+const changePasswordModal = document.getElementById('changePwdModal')
+const closeChangePwdIcon = document.getElementById('closeChangePwd')
+
+function openChangePwdModal(){
+  changePasswordModal.classList.remove('hidden')
+}
+changePwdBtn.addEventListener('click', openChangePwdModal)
+
+function closeChangePwdModal(){
+  if(!changePasswordModal.classList.contains('hidden')){
+    changePasswordModal.classList.add('hidden')
+  }
+}
+closeChangePwdIcon.addEventListener('click', closeChangePwdModal)
+
+
+
+////Open and close delete link modal
+const deleteButton = document.getElementById('deleteButton')
+const deleteLinkModal = document.getElementById('deleteLinkModal');
+const closeDeleteLinkIcon = document.getElementById('closeDeleteLinkModal');
+const confirmDeleteLinkBtn = document.getElementById('confirmDeleteLinkBtn');
+const cancelDeleteLinkBtn = document.getElementById('cancelDeleteLinkBtn');
+
+function openDeleteLinkModal() {
+    deleteLinkModal.classList.remove('hidden');
+}
+
+function closeDeleteLinkModal() {
+  if(!deleteLinkModal.classList.contains('hidden')){
+    deleteLinkModal.classList.add('hidden')
+  }
+}
+
+// Open the delete link modal when a delete button is clicked
+deleteButton.addEventListener('click', openDeleteLinkModal);
+
+// Close the delete link modal when the close icon is clicked
+closeDeleteLinkIcon.addEventListener('click', closeDeleteLinkModal);
+
+// Close the delete link modal when the cancel button is clicked
+cancelDeleteLinkBtn.addEventListener('click', closeDeleteLinkModal);
+
+// Handle the delete link operation when the confirm button is clicked
+confirmDeleteLinkBtn.addEventListener('click', function() {
+    // Add your code here to handle the delete link operation
+    // This is just an example, you need to implement your own logic
+    console.log('Link deleted!');
+    closeDeleteLinkModal();
+});
+
+
+////Open and close edit and delete link from modal
+
+
+
+///Pagination
+//Use query selector all to get all link cards and store them in an array
+//Get the container by id
+//get pagi
+
+const linkCardContainer = document.getElementById('linkCardCtn')
+
+const linksArray = []
+const listOfLinks = document.getElementsByClassName('link-card')
+linksArray.push(listOfLinks)
+
+let currentPage = 1
+let cardNumber = 9
+
+
+function displayLinks(links, container, linksPerPage, page){
+  page--
+
+  let start = linksPerPage * page
+  let end = start + linksPerPage
+  let paginatedItems = links.slice(start, end)
+
+
+  // for (let i = 0; i<paginatedItems.length; i++){
+  //   let 
+  // }
+
+return paginatedItems
+
+}
+
+displayLinks(linksArray, linkCardContainer, cardNumber, currentPage)
+console.log(displayLinks)
+
+
+
+
