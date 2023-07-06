@@ -166,8 +166,8 @@ linksContainer.addEventListener('click', function (event) {
   if (event.target.classList.contains('editLinkButton')) {
     openEditLink()
   }
-  if(event.target.classList.contains('deleteLinkButton')){
-    openDeleteLink()
+  if(event.target.classList.contains('deleteButton')){
+    openDeleteLinkModal()
   }
   if(event.target.classList.contains('viewDetailsButton')){
     openLinkDetails()
@@ -204,6 +204,57 @@ function toggleDropdown() {
 toggleIcon.addEventListener('click', toggleDropdown)
 
 
+///Open and close change password modal
+const changePwdBtn = document.getElementById('changePwdButton')
+const changePasswordModal = document.getElementById('changePwdModal')
+const closeChangePwdIcon = document.getElementById('closeChangePwd')
+
+function openChangePwdModal(){
+  changePasswordModal.classList.remove('hidden')
+}
+changePwdBtn.addEventListener('click', openChangePwdModal)
+
+function closeChangePwdModal(){
+  if(!changePasswordModal.classList.contains('hidden')){
+    changePasswordModal.classList.add('hidden')
+  }
+}
+closeChangePwdIcon.addEventListener('click', closeChangePwdModal)
+
+
+
+//Open and close delete link modal
+const deleteLinkModal = document.getElementById('deleteLinkModal');
+const closeDeleteLinkIcon = document.getElementById('closeDeleteLinkModal');
+const confirmDeleteLinkBtn = document.getElementById('confirmDeleteLinkBtn');
+const cancelDeleteLinkBtn = document.getElementById('cancelDeleteLinkBtn');
+
+function openDeleteLinkModal() {
+    deleteLinkModal.classList.remove('hidden');
+}
+
+function closeDeleteLinkModal() {
+  if(!deleteLinkModal.classList.contains('hidden')){
+    deleteLinkModal.classList.add('hidden')
+  }
+}
+
+// Open the delete link modal when a delete button is clicked
+// deleteButton.addEventListener('click', openDeleteLinkModal);
+
+// Close the delete link modal when the close icon is clicked
+closeDeleteLinkIcon.addEventListener('click', closeDeleteLinkModal);
+
+// Close the delete link modal when the cancel button is clicked
+cancelDeleteLinkBtn.addEventListener('click', closeDeleteLinkModal);
+
+// Handle the delete link operation when the confirm button is clicked
+confirmDeleteLinkBtn.addEventListener('click', function() {
+    // Add your code here to handle the delete link operation
+    // This is just an example, you need to implement your own logic
+    console.log('Link deleted!');
+    closeDeleteLinkModal();
+});
 
 
 const updateProfile = async function () { 
@@ -386,7 +437,7 @@ async function createLinks(links) {
   linksContainer.innerHTML = '';
   links.forEach((link) => {
     const linkElement = document.createElement('div');
-    linkElement.classList.add('md:w-[30%]', 'w-full', 'h-auto', 'p-[1.25rem]', 'flex', 'flex-col', 'md:gap-[0.75rem]', 'gap-[0.75rem]', 'bg-[#FFF]');
+    linkElement.classList.add('md:w-[30%]', 'w-full', 'h-auto', 'p-[1.25rem]', 'flex', 'flex-col', 'md:gap-[0.75rem]', 'gap-[0.75rem]', 'bg-[#FFF]', 'link-card');
     linkElement.innerHTML = `
     <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
       <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
@@ -396,7 +447,7 @@ async function createLinks(links) {
 
       <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
           <a <i id="editLinkButton" class=" editLinkButton fa-solid fa-pen cursor-pointer" style="color: #b5b6af;"></i></a>
-          <a <i class="fa-solid fa-trash cursor-pointer" style="color: #b5b6af;"></i></a>
+          <a <i id="deleteButton" class="fa-solid fa-trash cursor-pointer deleteButton" style="color: #b5b6af;"></i></a>
       </div>
 
     </div>
