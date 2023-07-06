@@ -8,7 +8,10 @@ loginForm.addEventListener('submit', handleFormSubmit);
 // Function to handle form submission
 function handleFormSubmit(event) {
     event.preventDefault(); // Prevent the form from being submitted
-  
+    
+    //change the textContent of the login to logging in
+    const loginButton = document.getElementById('loginButton');
+    loginButton.textContent = 'Logging in...';
     
     // Get the input values
     const userEmail = document.getElementById('userEmail').value;
@@ -30,11 +33,17 @@ async function login() {
         headers: { 'Content-Type': 'application/json' },
     });
     const data = await response.json();
+    //store token in local storage
+    localStorage.setItem('token', data.token);
     if (data.success === true) {
         window.location.href = 'dashboard.html';
     } else {
         loginError.classList.remove('hidden');
         loginError.textContent = data.error;
+        //change the textContent back to login
+        const loginButton = document.getElementById('loginButton');
+        loginButton.textContent = 'Log in';
+    
         setTimeout(() => {
             loginError.textContent = '';
         },2000)
