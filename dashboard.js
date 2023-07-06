@@ -203,3 +203,217 @@ function toggleDropdown() {
 
 toggleIcon.addEventListener('click', toggleDropdown)
 
+
+
+
+const updateProfile = async function () { 
+  //get the current loggedin user from my api
+  //get token from local storage
+  const token = localStorage.getItem('token');
+  const response = await fetch(`${base_api}/auth/profile`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+  const resp = await response.json();
+  const user = resp.data;
+    if(user){
+      const userInitials = document.getElementById('userInitials')
+      const userName = document.getElementById('userName')
+      //get the first letter of the user name
+      const firstLetter = user.lastName.charAt(0).toUpperCase()
+      //convert the first letter of te firstName and lastName to uppercase  
+      const firstName = user.firstName.charAt(0).toUpperCase() + user.firstName.slice(1)
+      const lastName = user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1)
+      const fullName = `${lastName} ${firstName}`
+      userInitials.textContent = firstLetter
+      userName.textContent = fullName
+    } else {
+      window.location.href = 'login.html'
+    }
+}
+
+
+// const linksContainer = document.getElementById('linksContainer');
+
+//function to get all the urls created by the user and display them on the dashboard
+const getLinks = async function () { 
+  const token = localStorage.getItem('token');
+  const response = await fetch(`${base_api}/user/clicks`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+  const resp = await response.json();
+  const data = resp.data;
+  if (resp.success === true) {
+    if (data.total > 0) {
+      const links = data.userClicks;
+      linksContainer.innerHTML = '';
+      createLinks(links);
+      //add pagination if the links are more than 9
+      if (data.total > 9) {
+        //remove the pagination on the page if there are no links
+        const paginationContainer = document.getElementById('paginationContainer')
+        paginationContainer.classList.remove('hidden')
+      }
+    } else {
+      linksContainer.innerHTML = `
+      <div class="no-links">
+        <p>You have not created any links yet.</p>
+      </div>
+    `;
+    
+    }
+  } else {
+    window.location.href = 'login.html';
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+//eventlistener that runs when the user clicks on the logout button
+const logoutButton = document.getElementById('logoutButton')
+  logoutButton.addEventListener('click', async function () {
+    //logout the user
+    //delete token from local storage
+    localStorage.removeItem('token')
+    window.location.href = 'login.html'
+  });
+
+
+
+//function to get all links on a page
+const getAllLinks = async function (pageNumber) { 
+  const token = localStorage.getItem('token');
+  const response = await fetch(`${base_api}/user/clicks?page=${pageNumber}`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+  const resp = await response.json();
+  const data = resp.data;
+  const lastPage = Math.ceil(data.total / 9)
+  if (resp.success === true) {
+    return {data, lastPage}
+  }
+}
+
+
+//add eventlistener to the pagination buttons
+const prevButton = document.getElementById('prevButton')
+const nextButton = document.getElementById('nextButton')
+
+
+//an eventlistener that changes the page number when the user clicks on the next button or prev button and check if the page is the last page or the first page
+let pageNumber = 1
+if (pageNumber === 1) {
+  prevButton.disabled = true
+  prevButton.style.cursor = 'not-allowed'
+} 
+
+
+
+nextButton.addEventListener('click', async function () { 
+  pageNumber++
+  const {data, lastPage} = await getAllLinks(pageNumber)
+  linksContainer.innerHTML = ''
+  const links = data.userClicks;
+  createLinks(links);
+
+  if (pageNumber === lastPage) {
+    // //remove prevButton cursor style
+    prevButton.style.cursor = 'pointer'
+    prevButton.disabled = false
+    nextButton.disabled = true
+    nextButton.style.cursor = 'not-allowed'
+  } else {
+    prevButton.disabled = false
+    prevButton.style.cursor = 'pointer'
+    nextButton.disabled = false
+    nextButton.style.cursor = 'pointer'
+  }
+  
+})
+
+
+prevButton.addEventListener('click', async function () { 
+  pageNumber--
+  const {data, lastPage} = await getAllLinks(pageNumber)
+  linksContainer.innerHTML = ''
+  const links = data.userClicks;
+  createLinks(links);
+  
+  if (pageNumber === 1) {
+    prevButton.disabled = true
+    prevButton.style.cursor = 'not-allowed'
+  }
+
+  if (pageNumber < lastPage) {
+    nextButton.disabled = false
+    nextButton.style.cursor = 'pointer'
+  } else {
+    nextButton.disabled = true
+    nextButton.style.cursor = 'not-allowed'
+  }
+})
+
+//function to convert created at date to a readable format with format month day, year
+function formatDate(date) { 
+  const newDate = new Date(date)
+  const month = newDate.toLocaleString('default', { month: 'long' });
+  const day = newDate.getDate()
+  const year = newDate.getFullYear()
+  const formattedDate = `${month} ${day}, ${year}`
+  return formattedDate
+}
+
+async function createLinks(links) {
+  linksContainer.innerHTML = '';
+  links.forEach((link) => {
+    const linkElement = document.createElement('div');
+    linkElement.classList.add('md:w-[30%]', 'w-full', 'h-auto', 'p-[1.25rem]', 'flex', 'flex-col', 'md:gap-[0.75rem]', 'gap-[0.75rem]', 'bg-[#FFF]');
+    linkElement.innerHTML = `
+    <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+      <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+          <a href="#" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">${link.urlId.url}</a>
+          <i class="fa-regular fa-copy" style="color: #1a1a19;"></i>
+      </div>
+
+      <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
+          <a <i id="editLinkButton" class=" editLinkButton fa-solid fa-pen cursor-pointer" style="color: #b5b6af;"></i></a>
+          <a <i class="fa-solid fa-trash cursor-pointer" style="color: #b5b6af;"></i></a>
+      </div>
+
+    </div>
+
+    <div class="w-full h-auto flex flex-col gap-[0.5rem]">
+        <a href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">${link.urlId.urlCode}</a>
+        <p class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Created on ${formatDate(link.urlId.created_at)}</p>
+
+        <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+            <p>${link.clicks} clicks</p>
+            <a <p id="viewDetailsButton" class="viewDetailsButton text-right font-['space_grotesk'] text-base font-bold text-[#525445] underline cursor-pointer">View details</p></a>
+        </div>
+    </div>
+  `;
+    linksContainer.appendChild(linkElement);
+  });
+} 
+
+
+
