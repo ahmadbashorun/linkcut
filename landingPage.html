@@ -64,41 +64,409 @@
 
     <main>
         <!-- Hero section -->
-        <section class="w-full h-auto bg-[#E9EDC9] md:px-[5rem] px-[1.25rem] md:pt-[7.5rem] pt-[3rem] pb-[15rem] flex flex-col gap-[2rem] items-center relative">
-            <div class="w-full h-auto flex flex-col items-center gap-[1.25rem]">
-                <h1 class="text-center font-['space_grotesk'] md:text-7xl text-4xl font-bold text-[#1A1A19] ">The super-intuitive link shortener.</h1>
-                <p class="text-center font-['space_grotesk'] md:text-3xl text-xl font-normal text-[#1A1A19] ">Shorten, share and track links with Linkcut.</p>
+        <section class="w-full h-auto bg-[#F0F0EE] flex flex-col items-center md:pb-[2rem]">
+
+            <!-- Top Hero Section -->
+            <div class="w-full h-auto bg-[#E9EDC9] md:px-[5rem] px-[1.25rem] md:pt-[7.5rem] pt-[8rem] md:pb-[18rem] pb-[8rem]  flex flex-col gap-[2rem] items-center relative">
+                <div class="w-full h-auto flex flex-col items-center gap-[1.25rem]">
+                    <h1 class="text-center font-['space_grotesk'] md:text-7xl text-4xl font-bold text-[#1A1A19] ">The super-intuitive link shortener.</h1>
+                    <p class="text-center font-['space_grotesk'] md:text-3xl text-xl font-normal text-[#1A1A19] ">Shorten, share and track links with Linkcut.</p>
+                </div>
+    
+                <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center justify-center">
+                    <a href="signup.html" class="w-fit h-auto md:py-[1rem] md:px-[1.5rem] py-[0.75rem] px-[1rem] bg-[#1A1A19] hover:bg-[#515445] text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#FFF] hover:shadow-[2px_4px_16px_0px_rgba(0,0,0,0.25)]">Get started</a>
+    
+                    <a href="login.html" class="w-fit h-auto md:py-[1rem] md:px-[1.5rem] py-[0.75rem] px-[1rem] bg-[#E9EDC9] border border-[#1A1A19] hover:bg-[#1A1A19] text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19] hover:text-white hover:shadow-[2px_4px_16px_0px_rgba(0,0,0,0.25)]">Log in</a>
+                </div>
+    
+                <svg class="md:absolute md:top-[32%] md:left-[17%] hidden md:block" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <path d="M27.656 20.3441C26.1558 18.8443 24.1214 18.0018 22 18.0018C19.8787 18.0018 17.8443 18.8443 16.344 20.3441L8.34404 28.3441C7.57996 29.0821 6.9705 29.9648 6.55123 30.9408C6.13196 31.9169 5.91127 32.9666 5.90204 34.0289C5.8928 35.0911 6.09522 36.1445 6.49747 37.1277C6.89971 38.1109 7.49374 39.0041 8.24488 39.7552C8.99602 40.5064 9.88924 41.1004 10.8724 41.5027C11.8556 41.9049 12.909 42.1073 13.9712 42.0981C15.0335 42.0889 16.0832 41.8682 17.0593 41.4489C18.0353 41.0296 18.9181 40.4202 19.656 39.6561L21.86 37.4541M20.344 27.6561C21.8443 29.1559 23.8787 29.9984 26 29.9984C28.1214 29.9984 30.1558 29.1559 31.656 27.6561L39.656 19.6561C41.1133 18.1473 41.9197 16.1264 41.9014 14.0289C41.8832 11.9313 41.0419 9.9248 39.5586 8.44153C38.0753 6.95827 36.0688 6.11692 33.9712 6.09869C31.8737 6.08046 29.8529 6.88682 28.344 8.34408L26.144 10.5441" stroke="#CCD5AE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+    
+                <svg class="absolute top-[68%] md:left-[8%] left-[2%] rotate-[-121deg]" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <path d="M27.656 20.3441C26.1558 18.8443 24.1214 18.0018 22 18.0018C19.8787 18.0018 17.8443 18.8443 16.344 20.3441L8.34404 28.3441C7.57996 29.0821 6.9705 29.9648 6.55123 30.9408C6.13196 31.9169 5.91127 32.9666 5.90204 34.0289C5.8928 35.0911 6.09522 36.1445 6.49747 37.1277C6.89971 38.1109 7.49374 39.0041 8.24488 39.7552C8.99602 40.5064 9.88924 41.1004 10.8724 41.5027C11.8556 41.9049 12.909 42.1073 13.9712 42.0981C15.0335 42.0889 16.0832 41.8682 17.0593 41.4489C18.0353 41.0296 18.9181 40.4202 19.656 39.6561L21.86 37.4541M20.344 27.6561C21.8443 29.1559 23.8787 29.9984 26 29.9984C28.1214 29.9984 30.1558 29.1559 31.656 27.6561L39.656 19.6561C41.1133 18.1473 41.9197 16.1264 41.9014 14.0289C41.8832 11.9313 41.0419 9.9248 39.5586 8.44153C38.0753 6.95827 36.0688 6.11692 33.9712 6.09869C31.8737 6.08046 29.8529 6.88682 28.344 8.34408L26.144 10.5441" stroke="#CCD5AE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+    
+                <svg class="absolute top-[10%] left-[88%]  rotate-[-66deg]" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <path d="M27.656 20.3441C26.1558 18.8443 24.1214 18.0018 22 18.0018C19.8787 18.0018 17.8443 18.8443 16.344 20.3441L8.34404 28.3441C7.57996 29.0821 6.9705 29.9648 6.55123 30.9408C6.13196 31.9169 5.91127 32.9666 5.90204 34.0289C5.8928 35.0911 6.09522 36.1445 6.49747 37.1277C6.89971 38.1109 7.49374 39.0041 8.24488 39.7552C8.99602 40.5064 9.88924 41.1004 10.8724 41.5027C11.8556 41.9049 12.909 42.1073 13.9712 42.0981C15.0335 42.0889 16.0832 41.8682 17.0593 41.4489C18.0353 41.0296 18.9181 40.4202 19.656 39.6561L21.86 37.4541M20.344 27.6561C21.8443 29.1559 23.8787 29.9984 26 29.9984C28.1214 29.9984 30.1558 29.1559 31.656 27.6561L39.656 19.6561C41.1133 18.1473 41.9197 16.1264 41.9014 14.0289C41.8832 11.9313 41.0419 9.9248 39.5586 8.44153C38.0753 6.95827 36.0688 6.11692 33.9712 6.09869C31.8737 6.08046 29.8529 6.88682 28.344 8.34408L26.144 10.5441" stroke="#CCD5AE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+    
+                <svg class="absolute top-[52%] left-[80%] md:block hidden" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <path d="M27.656 20.3441C26.1558 18.8443 24.1214 18.0018 22 18.0018C19.8787 18.0018 17.8443 18.8443 16.344 20.3441L8.34404 28.3441C7.57996 29.0821 6.9705 29.9648 6.55123 30.9408C6.13196 31.9169 5.91127 32.9666 5.90204 34.0289C5.8928 35.0911 6.09522 36.1445 6.49747 37.1277C6.89971 38.1109 7.49374 39.0041 8.24488 39.7552C8.99602 40.5064 9.88924 41.1004 10.8724 41.5027C11.8556 41.9049 12.909 42.1073 13.9712 42.0981C15.0335 42.0889 16.0832 41.8682 17.0593 41.4489C18.0353 41.0296 18.9181 40.4202 19.656 39.6561L21.86 37.4541M20.344 27.6561C21.8443 29.1559 23.8787 29.9984 26 29.9984C28.1214 29.9984 30.1558 29.1559 31.656 27.6561L39.656 19.6561C41.1133 18.1473 41.9197 16.1264 41.9014 14.0289C41.8832 11.9313 41.0419 9.9248 39.5586 8.44153C38.0753 6.95827 36.0688 6.11692 33.9712 6.09869C31.8737 6.08046 29.8529 6.88682 28.344 8.34408L26.144 10.5441" stroke="#CCD5AE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
             </div>
 
-            <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center justify-center">
-                <a href="signup.html" class="w-fit h-auto md:py-[1rem] md:px-[1.5rem] py-[0.75rem] px-[1rem] bg-[#1A1A19] hover:bg-[#515445] text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#FFF] hover:shadow-[2px_4px_16px_0px_rgba(0,0,0,0.25)]">Get started</a>
 
-                <a href="login.html" class="w-fit h-auto md:py-[1rem] md:px-[1.5rem] py-[0.75rem] px-[1rem] bg-[#E9EDC9] border border-[#1A1A19] hover:bg-[#1A1A19] text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19] hover:text-white hover:shadow-[2px_4px_16px_0px_rgba(0,0,0,0.25)]">Log in</a>
+            <!-- create link sub-section -->
+            <div class="bg-white md:w-[60%] w-[90%] h-auto p-[1.25rem] flex flex-col md:justify-center gap[3-rem] drop-shadow-xl md:mt-[-13.75rem] mt-[-5rem] z-50" >
+    
+                <div class="w-full h-auto flex flex-col gap-[1.5rem]">
+                    <div class="flex flex-col md:gap-[0.5rem] gap-[0.3rem]">
+                        <h3 class="text-center font-['space_grotesk'] md:text-3xl text-2xl font-bold text-[#1A1A19]">Create a new link</h3>
+                        <p class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Generate a shortened URL and an optional QR code below.</p>
+                    </div>
+    
+                    <form id="createLinkForm" class="w-full h-auto flex flex-col justify-center items-center gap-[0.75rem]">
+                        <p id="successMessage" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-green-500"></p>
+                        
+                        <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
+                            <label for="destinationURL" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Destination URL*</label>
+                            <input type="url" name="destinationURL" id="destinationURL" placeholder="Destination URL" class="w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                            <p class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#EB5757]"></p>
+                        </div>
+    
+                        <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
+                            <label for="backHalf" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Custom back-half (optional)</label>
+                            <input type="text" name="backHalf" id="backHalf" placeholder="e.g linkcut.com/example-back-half" class="w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                            <p class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#EB5757]"></p>
+                        </div>
+                        
+                        <!-- Add more form inputs here as needed -->
+        
+                        <!-- Submit button -->
+                        <button type="submit" id="createLinkButton" class="mt-4 w-fit h-auto py-[0.75rem] px-[1rem] bg-[#1A1A19] hover:bg-[#515445] text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#FFF] hover:shadow-[2px_4px_16px_0px_rgba(0,0,0,0.25)]">Create link</button>
+                    </form> 
+
+                    <!-- Generated link -->
+                    <div class="w-full h-auto flex flex-col gap-[1rem] hidden">
+                        <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
+                            <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
+                                <a href="#" id="viewUrlCode" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">linkcut.com/newlink</a>
+                                <a id="copyUrlCode"><i class="copyButton fa-regular fa-copy text-[#1a1a19]"></i></a>
+                            </div>
+                            <div id="copYMessage" class="hidden w-full text-center font-['space_grotesk'] md:text-sm text-base  mt-2">Copied</div>            
+                        </div>
+            
+                        <div class="w-full h-auto flex md:flex-row md:justify-between flex-col gap-[0.5rem]">
+                            <a href="" class="text-left font-['space_grotesk'] text-base font-bold text-[#525445 underline truncate"> Sign up to view details</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-
-            <svg class="absolute top-[32%] left-[17%]" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <path d="M27.656 20.3441C26.1558 18.8443 24.1214 18.0018 22 18.0018C19.8787 18.0018 17.8443 18.8443 16.344 20.3441L8.34404 28.3441C7.57996 29.0821 6.9705 29.9648 6.55123 30.9408C6.13196 31.9169 5.91127 32.9666 5.90204 34.0289C5.8928 35.0911 6.09522 36.1445 6.49747 37.1277C6.89971 38.1109 7.49374 39.0041 8.24488 39.7552C8.99602 40.5064 9.88924 41.1004 10.8724 41.5027C11.8556 41.9049 12.909 42.1073 13.9712 42.0981C15.0335 42.0889 16.0832 41.8682 17.0593 41.4489C18.0353 41.0296 18.9181 40.4202 19.656 39.6561L21.86 37.4541M20.344 27.6561C21.8443 29.1559 23.8787 29.9984 26 29.9984C28.1214 29.9984 30.1558 29.1559 31.656 27.6561L39.656 19.6561C41.1133 18.1473 41.9197 16.1264 41.9014 14.0289C41.8832 11.9313 41.0419 9.9248 39.5586 8.44153C38.0753 6.95827 36.0688 6.11692 33.9712 6.09869C31.8737 6.08046 29.8529 6.88682 28.344 8.34408L26.144 10.5441" stroke="#CCD5AE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-
-            <svg class="absolute top-[52%] left-[10%]" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <path d="M27.656 20.3441C26.1558 18.8443 24.1214 18.0018 22 18.0018C19.8787 18.0018 17.8443 18.8443 16.344 20.3441L8.34404 28.3441C7.57996 29.0821 6.9705 29.9648 6.55123 30.9408C6.13196 31.9169 5.91127 32.9666 5.90204 34.0289C5.8928 35.0911 6.09522 36.1445 6.49747 37.1277C6.89971 38.1109 7.49374 39.0041 8.24488 39.7552C8.99602 40.5064 9.88924 41.1004 10.8724 41.5027C11.8556 41.9049 12.909 42.1073 13.9712 42.0981C15.0335 42.0889 16.0832 41.8682 17.0593 41.4489C18.0353 41.0296 18.9181 40.4202 19.656 39.6561L21.86 37.4541M20.344 27.6561C21.8443 29.1559 23.8787 29.9984 26 29.9984C28.1214 29.9984 30.1558 29.1559 31.656 27.6561L39.656 19.6561C41.1133 18.1473 41.9197 16.1264 41.9014 14.0289C41.8832 11.9313 41.0419 9.9248 39.5586 8.44153C38.0753 6.95827 36.0688 6.11692 33.9712 6.09869C31.8737 6.08046 29.8529 6.88682 28.344 8.34408L26.144 10.5441" stroke="#CCD5AE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-
-            <svg class="absolute top-[52%] left-[70%]" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <path d="M27.656 20.3441C26.1558 18.8443 24.1214 18.0018 22 18.0018C19.8787 18.0018 17.8443 18.8443 16.344 20.3441L8.34404 28.3441C7.57996 29.0821 6.9705 29.9648 6.55123 30.9408C6.13196 31.9169 5.91127 32.9666 5.90204 34.0289C5.8928 35.0911 6.09522 36.1445 6.49747 37.1277C6.89971 38.1109 7.49374 39.0041 8.24488 39.7552C8.99602 40.5064 9.88924 41.1004 10.8724 41.5027C11.8556 41.9049 12.909 42.1073 13.9712 42.0981C15.0335 42.0889 16.0832 41.8682 17.0593 41.4489C18.0353 41.0296 18.9181 40.4202 19.656 39.6561L21.86 37.4541M20.344 27.6561C21.8443 29.1559 23.8787 29.9984 26 29.9984C28.1214 29.9984 30.1558 29.1559 31.656 27.6561L39.656 19.6561C41.1133 18.1473 41.9197 16.1264 41.9014 14.0289C41.8832 11.9313 41.0419 9.9248 39.5586 8.44153C38.0753 6.95827 36.0688 6.11692 33.9712 6.09869C31.8737 6.08046 29.8529 6.88682 28.344 8.34408L26.144 10.5441" stroke="#CCD5AE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-
-            <svg class="absolute top-[12%] left-[80%]" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <path d="M27.656 20.3441C26.1558 18.8443 24.1214 18.0018 22 18.0018C19.8787 18.0018 17.8443 18.8443 16.344 20.3441L8.34404 28.3441C7.57996 29.0821 6.9705 29.9648 6.55123 30.9408C6.13196 31.9169 5.91127 32.9666 5.90204 34.0289C5.8928 35.0911 6.09522 36.1445 6.49747 37.1277C6.89971 38.1109 7.49374 39.0041 8.24488 39.7552C8.99602 40.5064 9.88924 41.1004 10.8724 41.5027C11.8556 41.9049 12.909 42.1073 13.9712 42.0981C15.0335 42.0889 16.0832 41.8682 17.0593 41.4489C18.0353 41.0296 18.9181 40.4202 19.656 39.6561L21.86 37.4541M20.344 27.6561C21.8443 29.1559 23.8787 29.9984 26 29.9984C28.1214 29.9984 30.1558 29.1559 31.656 27.6561L39.656 19.6561C41.1133 18.1473 41.9197 16.1264 41.9014 14.0289C41.8832 11.9313 41.0419 9.9248 39.5586 8.44153C38.0753 6.95827 36.0688 6.11692 33.9712 6.09869C31.8737 6.08046 29.8529 6.88682 28.344 8.34408L26.144 10.5441" stroke="#CCD5AE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            
 
         </section>
 
+        <!-- Features Section -->
+        <section class="w-full h-auto bg-[#F0F0EE] md:p-[6rem] px-[1.25rem] py-[5rem]  flex md:flex-row flex-col md:gap-[6rem] gap-[3rem] items-center justify-center">
 
-        <!-- create link section -->
-       
+            <!-- Left content -->
+            <div class="md:w-[40%] w-full h-auto flex flex-col gap-[2rem]">
+                <h2 class="text-left font-['space_grotesk'] md:text-3xl text-2xl font-bold text-[#1A1A19]">Seize the power of simplicity.</h2>
+
+                <!-- feature item -->
+                <div class="w-fit h-auto gap-[1rem] flex flex-row items-start justify-start">
+                    <!-- icon -->
+                    <div class="w-[3rem] h-[3rem] p-[0.75rem] flex justify-center items-center bg-[#E9EDC9] rounded-full border-[2px] border-[#1A1A19]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1032 6.0032C15.3246 5.77398 15.5895 5.59114 15.8823 5.46536C16.1751 5.33958 16.49 5.27337 16.8087 5.2706C17.1274 5.26783 17.4434 5.32856 17.7383 5.44923C18.0333 5.5699 18.3013 5.74811 18.5266 5.97345C18.7519 6.1988 18.9301 6.46676 19.0508 6.76171C19.1715 7.05666 19.2322 7.37269 19.2294 7.69136C19.2267 8.01003 19.1605 8.32496 19.0347 8.61777C18.9089 8.91058 18.7261 9.17541 18.4968 9.3968L14.8968 12.9968C14.4468 13.4467 13.8364 13.6995 13.2 13.6995C12.5637 13.6995 11.9533 13.4467 11.5032 12.9968C11.2769 12.7782 10.9738 12.6573 10.6592 12.66C10.3445 12.6627 10.0436 12.7889 9.82106 13.0114C9.59858 13.2339 9.47237 13.5349 9.46964 13.8495C9.4669 14.1642 9.58786 14.4673 9.80645 14.6936C10.7066 15.5935 11.9273 16.099 13.2 16.099C14.4728 16.099 15.6935 15.5935 16.5936 14.6936L20.1936 11.0936C21.068 10.1883 21.5518 8.97582 21.5409 7.71728C21.5299 6.45873 21.0251 5.25483 20.1352 4.36487C19.2452 3.47491 18.0413 2.9701 16.7828 2.95917C15.5242 2.94823 14.3117 3.43204 13.4064 4.3064L11.6064 6.1064C11.4918 6.2171 11.4004 6.34951 11.3375 6.49592C11.2746 6.64232 11.2415 6.79978 11.2401 6.95912C11.2388 7.11846 11.2691 7.27647 11.3295 7.42395C11.3898 7.57142 11.4789 7.7054 11.5916 7.81808C11.7042 7.93075 11.8382 8.01985 11.9857 8.08019C12.1332 8.14052 12.2912 8.17089 12.4505 8.1695C12.6099 8.16812 12.7673 8.13501 12.9137 8.07212C13.0601 8.00923 13.1926 7.91781 13.3032 7.8032L15.1032 6.0032ZM9.10325 12.0032C9.55331 11.5533 10.1637 11.3005 10.8 11.3005C11.4364 11.3005 12.0468 11.5533 12.4968 12.0032C12.6075 12.1178 12.74 12.2092 12.8864 12.2721C13.0328 12.335 13.1902 12.3681 13.3496 12.3695C13.5089 12.3709 13.6669 12.3405 13.8144 12.2802C13.9619 12.2199 14.0958 12.1307 14.2085 12.0181C14.3212 11.9054 14.4103 11.7714 14.4706 11.6239C14.531 11.4765 14.5613 11.3185 14.5599 11.1591C14.5586 10.9998 14.5255 10.8423 14.4626 10.6959C14.3997 10.5495 14.3083 10.4171 14.1936 10.3064C13.2935 9.40654 12.0728 8.90103 10.8 8.90103C9.52726 8.90103 8.30658 9.40654 7.40645 10.3064L3.80645 13.9064C3.348 14.3492 2.98232 14.8788 2.73076 15.4645C2.4792 16.0501 2.34678 16.6799 2.34125 17.3173C2.33571 17.9546 2.45716 18.5867 2.6985 19.1766C2.93985 19.7665 3.29627 20.3024 3.74695 20.7531C4.19764 21.2038 4.73357 21.5602 5.32347 21.8015C5.91337 22.0429 6.54543 22.1643 7.18277 22.1588C7.82011 22.1533 8.44997 22.0209 9.03559 21.7693C9.62121 21.5177 10.1509 21.1521 10.5936 20.6936L12.3936 18.8936C12.5083 18.7829 12.5997 18.6505 12.6626 18.5041C12.7255 18.3577 12.7586 18.2002 12.7599 18.0409C12.7613 17.8815 12.731 17.7235 12.6706 17.5761C12.6103 17.4286 12.5212 17.2946 12.4085 17.1819C12.2958 17.0693 12.1619 16.9802 12.0144 16.9198C11.8669 16.8595 11.7089 16.8291 11.5496 16.8305C11.3902 16.8319 11.2328 16.865 11.0864 16.9279C10.94 16.9908 10.8075 17.0822 10.6968 17.1968L8.89685 18.9968C8.67546 19.226 8.41063 19.4089 8.11782 19.5346C7.82501 19.6604 7.51008 19.7266 7.19141 19.7294C6.87274 19.7322 6.55671 19.6714 6.26176 19.5508C5.96681 19.4301 5.69884 19.2519 5.4735 19.0266C5.24816 18.8012 5.06995 18.5332 4.94928 18.2383C4.8286 17.9433 4.76788 17.6273 4.77065 17.3086C4.77342 16.99 4.83962 16.675 4.9654 16.3822C5.09119 16.0894 5.27402 15.8246 5.50325 15.6032L9.10325 12.0032Z" fill="#1A1A19"/>
+                          </svg>
+                    </div>
+
+                    <!-- content -->
+                    <div class="w-fit h-auto gap-[0.5rem] flex flex-col items-start">
+                        <h4 class="text-left font-['space_grotesk'] md:text-xl text-lg font-bold text-[#1A1A19]">Shorten links in one click.</h4>
+                        <p class="text-left font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Yup, it’s that simple. Just input your long url and an optional custom back-half.</p>
+                    </div>
+                </div>
+                <!-- feature item -->
+                <div class="w-fit h-auto gap-[1rem] flex flex-row items-start justify-start">
+                    <!-- icon -->
+                    <div class="w-[3rem] h-[3rem] p-[0.75rem] flex justify-center items-center bg-[#E9EDC9] rounded-full border-[2px] border-[#1A1A19]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <g clip-path="url(#clip0_300_3226)">
+                              <path d="M24 0.5H0V24.5H24V0.5Z" fill="#1A1A19"/>
+                              <path d="M2.5 2H1.5V3H2.5V2Z" fill="#E9EDC9"/>
+                              <path d="M3.5 2H2.5V3H3.5V2Z" fill="#E9EDC9"/>
+                              <path d="M4.5 2H3.5V3H4.5V2Z" fill="#E9EDC9"/>
+                              <path d="M5.5 2H4.5V3H5.5V2Z" fill="#E9EDC9"/>
+                              <path d="M6.5 2H5.5V3H6.5V2Z" fill="#E9EDC9"/>
+                              <path d="M7.5 2H6.5V3H7.5V2Z" fill="#E9EDC9"/>
+                              <path d="M8.5 2H7.5V3H8.5V2Z" fill="#E9EDC9"/>
+                              <path d="M10.5 2H9.5V3H10.5V2Z" fill="#E9EDC9"/>
+                              <path d="M12.5 2H11.5V3H12.5V2Z" fill="#E9EDC9"/>
+                              <path d="M16.5 2H15.5V3H16.5V2Z" fill="#E9EDC9"/>
+                              <path d="M17.5 2H16.5V3H17.5V2Z" fill="#E9EDC9"/>
+                              <path d="M18.5 2H17.5V3H18.5V2Z" fill="#E9EDC9"/>
+                              <path d="M19.5 2H18.5V3H19.5V2Z" fill="#E9EDC9"/>
+                              <path d="M20.5 2H19.5V3H20.5V2Z" fill="#E9EDC9"/>
+                              <path d="M21.5 2H20.5V3H21.5V2Z" fill="#E9EDC9"/>
+                              <path d="M22.5 2H21.5V3H22.5V2Z" fill="#E9EDC9"/>
+                              <path d="M2.5 3H1.5V4H2.5V3Z" fill="#E9EDC9"/>
+                              <path d="M8.5 3H7.5V4H8.5V3Z" fill="#E9EDC9"/>
+                              <path d="M11.5 3H10.5L10.5 4H11.5L11.5 3Z" fill="#E9EDC9"/>
+                              <path d="M14.5 3H13.5V4H14.5V3Z" fill="#E9EDC9"/>
+                              <path d="M16.5 3H15.5V4H16.5V3Z" fill="#E9EDC9"/>
+                              <path d="M22.5 3H21.5V4H22.5V3Z" fill="#E9EDC9"/>
+                              <path d="M2.5 4H1.5V5H2.5V4Z" fill="#E9EDC9"/>
+                              <path d="M4.5 4H3.5V5H4.5V4Z" fill="#E9EDC9"/>
+                              <path d="M5.5 4H4.5V5H5.5V4Z" fill="#E9EDC9"/>
+                              <path d="M6.5 4H5.5V5H6.5V4Z" fill="#E9EDC9"/>
+                              <path d="M8.5 4H7.5V5H8.5V4Z" fill="#E9EDC9"/>
+                              <path d="M10.5 4H9.5V5H10.5L10.5 4Z" fill="#E9EDC9"/>
+                              <path d="M12.5 4H11.5L11.5 5H12.5V4Z" fill="#E9EDC9"/>
+                              <path d="M13.5 4H12.5V5H13.5V4Z" fill="#E9EDC9"/>
+                              <path d="M14.5 4H13.5V5H14.5V4Z" fill="#E9EDC9"/>
+                              <path d="M16.5 4H15.5V5H16.5V4Z" fill="#E9EDC9"/>
+                              <path d="M18.5 4H17.5V5H18.5V4Z" fill="#E9EDC9"/>
+                              <path d="M19.5 4H18.5V5H19.5V4Z" fill="#E9EDC9"/>
+                              <path d="M20.5 4H19.5V5H20.5V4Z" fill="#E9EDC9"/>
+                              <path d="M22.5 4H21.5V5H22.5V4Z" fill="#E9EDC9"/>
+                              <path d="M2.5 5H1.5V6H2.5V5Z" fill="#E9EDC9"/>
+                              <path d="M4.5 5H3.5V6H4.5V5Z" fill="#E9EDC9"/>
+                              <path d="M5.5 5H4.5V6H5.5V5Z" fill="#E9EDC9"/>
+                              <path d="M6.5 5H5.5V6H6.5V5Z" fill="#E9EDC9"/>
+                              <path d="M8.5 5H7.5V6H8.5V5Z" fill="#E9EDC9"/>
+                              <path d="M10.5 5H9.5V6H10.5V5Z" fill="#E9EDC9"/>
+                              <path d="M11.5 5H10.5V6H11.5L11.5 5Z" fill="#E9EDC9"/>
+                              <path d="M12.5 5H11.5L11.5 6H12.5V5Z" fill="#E9EDC9"/>
+                              <path d="M16.5 5H15.5V6H16.5V5Z" fill="#E9EDC9"/>
+                              <path d="M18.5 5H17.5V6H18.5V5Z" fill="#E9EDC9"/>
+                              <path d="M19.5 5H18.5V6H19.5V5Z" fill="#E9EDC9"/>
+                              <path d="M20.5 5H19.5V6H20.5V5Z" fill="#E9EDC9"/>
+                              <path d="M22.5 5H21.5V6H22.5V5Z" fill="#E9EDC9"/>
+                              <path d="M2.5 6H1.5V7H2.5V6Z" fill="#E9EDC9"/>
+                              <path d="M4.5 6H3.5V7H4.5V6Z" fill="#E9EDC9"/>
+                              <path d="M5.5 6H4.5V7H5.5V6Z" fill="#E9EDC9"/>
+                              <path d="M6.5 6H5.5V7H6.5V6Z" fill="#E9EDC9"/>
+                              <path d="M8.5 6H7.5V7H8.5V6Z" fill="#E9EDC9"/>
+                              <path d="M12.5 6H11.5L11.5 7H12.5V6Z" fill="#E9EDC9"/>
+                              <path d="M16.5 6H15.5V7H16.5V6Z" fill="#E9EDC9"/>
+                              <path d="M18.5 6H17.5V7H18.5V6Z" fill="#E9EDC9"/>
+                              <path d="M19.5 6H18.5V7H19.5V6Z" fill="#E9EDC9"/>
+                              <path d="M20.5 6H19.5V7H20.5V6Z" fill="#E9EDC9"/>
+                              <path d="M22.5 6H21.5V7H22.5V6Z" fill="#E9EDC9"/>
+                              <path d="M2.5 7H1.5V8H2.5V7Z" fill="#E9EDC9"/>
+                              <path d="M8.5 7H7.5V8H8.5V7Z" fill="#E9EDC9"/>
+                              <path d="M10.5 7H9.5V8H10.5V7Z" fill="#E9EDC9"/>
+                              <path d="M11.5 7H10.5V8H11.5L11.5 7Z" fill="#E9EDC9"/>
+                              <path d="M13.5 7H12.5L12.5 8H13.5V7Z" fill="#E9EDC9"/>
+                              <path d="M14.5 7H13.5V8H14.5V7Z" fill="#E9EDC9"/>
+                              <path d="M16.5 7H15.5V8H16.5V7Z" fill="#E9EDC9"/>
+                              <path d="M22.5 7H21.5V8H22.5V7Z" fill="#E9EDC9"/>
+                              <path d="M2.5 8H1.5V9H2.5V8Z" fill="#E9EDC9"/>
+                              <path d="M3.5 8H2.5V9H3.5V8Z" fill="#E9EDC9"/>
+                              <path d="M4.5 8H3.5V9H4.5V8Z" fill="#E9EDC9"/>
+                              <path d="M5.5 8H4.5V9H5.5V8Z" fill="#E9EDC9"/>
+                              <path d="M6.5 8H5.5V9H6.5V8Z" fill="#E9EDC9"/>
+                              <path d="M7.5 8H6.5V9H7.5V8Z" fill="#E9EDC9"/>
+                              <path d="M8.5 8H7.5V9H8.5V8Z" fill="#E9EDC9"/>
+                              <path d="M10.5 8H9.5V9H10.5V8Z" fill="#E9EDC9"/>
+                              <path d="M12.5 8H11.5L11.5 9H12.5L12.5 8Z" fill="#E9EDC9"/>
+                              <path d="M14.5 8H13.5V9H14.5V8Z" fill="#E9EDC9"/>
+                              <path d="M16.5 8H15.5V9H16.5V8Z" fill="#E9EDC9"/>
+                              <path d="M17.5 8H16.5V9H17.5V8Z" fill="#E9EDC9"/>
+                              <path d="M18.5 8H17.5V9H18.5V8Z" fill="#E9EDC9"/>
+                              <path d="M19.5 8H18.5V9H19.5V8Z" fill="#E9EDC9"/>
+                              <path d="M20.5 8H19.5V9H20.5V8Z" fill="#E9EDC9"/>
+                              <path d="M21.5 8H20.5V9H21.5V8Z" fill="#E9EDC9"/>
+                              <path d="M22.5 8H21.5V9H22.5V8Z" fill="#E9EDC9"/>
+                              <path d="M10.5 9H9.5V10H10.5V9Z" fill="#E9EDC9"/>
+                              <path d="M11.5 9H10.5V10H11.5L11.5 9Z" fill="#E9EDC9"/>
+                              <path d="M13.5 9H12.5L12.5 10H13.5V9Z" fill="#E9EDC9"/>
+                              <path d="M14.5 9H13.5V10H14.5V9Z" fill="#E9EDC9"/>
+                              <path d="M2.5 10H1.5V11H2.5V10Z" fill="#E9EDC9"/>
+                              <path d="M3.5 10H2.5V11H3.5V10Z" fill="#E9EDC9"/>
+                              <path d="M5.5 10H4.5V11H5.5V10Z" fill="#E9EDC9"/>
+                              <path d="M8.5 10H7.5V11H8.5V10Z" fill="#E9EDC9"/>
+                              <path d="M9.5 10L8.5 10V11H9.5L9.5 10Z" fill="#E9EDC9"/>
+                              <path d="M12.5 10H11.5L11.5 11H12.5L12.5 10Z" fill="#E9EDC9"/>
+                              <path d="M13.5 10H12.5L12.5 11H13.5V10Z" fill="#E9EDC9"/>
+                              <path d="M14.5 10H13.5V11H14.5V10Z" fill="#E9EDC9"/>
+                              <path d="M15.5 10L14.5 10V11H15.5V10Z" fill="#E9EDC9"/>
+                              <path d="M16.5 10H15.5V11H16.5V10Z" fill="#E9EDC9"/>
+                              <path d="M17.5 10H16.5V11H17.5V10Z" fill="#E9EDC9"/>
+                              <path d="M19.5 10H18.5V11H19.5V10Z" fill="#E9EDC9"/>
+                              <path d="M20.5 10H19.5V11H20.5V10Z" fill="#E9EDC9"/>
+                              <path d="M22.5 10H21.5V11H22.5V10Z" fill="#E9EDC9"/>
+                              <path d="M2.5 11H1.5V12H2.5V11Z" fill="#E9EDC9"/>
+                              <path d="M3.5 11H2.5V12H3.5V11Z" fill="#E9EDC9"/>
+                              <path d="M4.5 11H3.5V12H4.5V11Z" fill="#E9EDC9"/>
+                              <path d="M5.5 11H4.5V12H5.5V11Z" fill="#E9EDC9"/>
+                              <path d="M7.5 11L6.5 11V12H7.5V11Z" fill="#E9EDC9"/>
+                              <path d="M9.5 11H8.5V12H9.5V11Z" fill="#E9EDC9"/>
+                              <path d="M10.5 11L9.5 11V12H10.5V11Z" fill="#E9EDC9"/>
+                              <path d="M11.5 11L10.5 11V12H11.5L11.5 11Z" fill="#E9EDC9"/>
+                              <path d="M12.5 11H11.5L11.5 12H12.5V11Z" fill="#E9EDC9"/>
+                              <path d="M13.5 11H12.5V12H13.5V11Z" fill="#E9EDC9"/>
+                              <path d="M15.5 11H14.5V12H15.5V11Z" fill="#E9EDC9"/>
+                              <path d="M17.5 11H16.5V12H17.5V11Z" fill="#E9EDC9"/>
+                              <path d="M18.5 11H17.5V12H18.5V11Z" fill="#E9EDC9"/>
+                              <path d="M20.5 11H19.5V12H20.5V11Z" fill="#E9EDC9"/>
+                              <path d="M21.5 11H20.5V12H21.5V11Z" fill="#E9EDC9"/>
+                              <path d="M2.5 12H1.5V13H2.5V12Z" fill="#E9EDC9"/>
+                              <path d="M4.5 12H3.5V13H4.5V12Z" fill="#E9EDC9"/>
+                              <path d="M6.5 12H5.5V13H6.5V12Z" fill="#E9EDC9"/>
+                              <path d="M8.5 12H7.5V13H8.5V12Z" fill="#E9EDC9"/>
+                              <path d="M10.5 12H9.5L9.5 13H10.5V12Z" fill="#E9EDC9"/>
+                              <path d="M11.5 12H10.5V13H11.5V12Z" fill="#E9EDC9"/>
+                              <path d="M12.5 12H11.5V13H12.5V12Z" fill="#E9EDC9"/>
+                              <path d="M13.5 12H12.5V13H13.5V12Z" fill="#E9EDC9"/>
+                              <path d="M14.5 12H13.5V13H14.5V12Z" fill="#E9EDC9"/>
+                              <path d="M15.5 12H14.5V13H15.5V12Z" fill="#E9EDC9"/>
+                              <path d="M16.5 12H15.5V13H16.5V12Z" fill="#E9EDC9"/>
+                              <path d="M17.5 12H16.5V13H17.5V12Z" fill="#E9EDC9"/>
+                              <path d="M18.5 12H17.5V13H18.5V12Z" fill="#E9EDC9"/>
+                              <path d="M20.5 12H19.5V13H20.5V12Z" fill="#E9EDC9"/>
+                              <path d="M21.5 12H20.5V13H21.5V12Z" fill="#E9EDC9"/>
+                              <path d="M5.5 13H4.5V14H5.5V13Z" fill="#E9EDC9"/>
+                              <path d="M6.5 13H5.5V14H6.5V13Z" fill="#E9EDC9"/>
+                              <path d="M7.5 13H6.5V14H7.5V13Z" fill="#E9EDC9"/>
+                              <path d="M9.5 13H8.5V14H9.5L9.5 13Z" fill="#E9EDC9"/>
+                              <path d="M10.5 13H9.5L9.5 14H10.5V13Z" fill="#E9EDC9"/>
+                              <path d="M11.5 13H10.5V14H11.5V13Z" fill="#E9EDC9"/>
+                              <path d="M12.5 13H11.5V14H12.5V13Z" fill="#E9EDC9"/>
+                              <path d="M13.5 13H12.5V14H13.5V13Z" fill="#E9EDC9"/>
+                              <path d="M15.5 13H14.5V14H15.5V13Z" fill="#E9EDC9"/>
+                              <path d="M16.5 13H15.5V14H16.5V13Z" fill="#E9EDC9"/>
+                              <path d="M19.5 13H18.5V14H19.5V13Z" fill="#E9EDC9"/>
+                              <path d="M2.5 14H1.5V15H2.5V14Z" fill="#E9EDC9"/>
+                              <path d="M3.5 14H2.5V15H3.5V14Z" fill="#E9EDC9"/>
+                              <path d="M4.5 14H3.5V15H4.5V14Z" fill="#E9EDC9"/>
+                              <path d="M5.5 14H4.5V15H5.5V14Z" fill="#E9EDC9"/>
+                              <path d="M7.5 14H6.5V15H7.5V14Z" fill="#E9EDC9"/>
+                              <path d="M8.5 14H7.5V15H8.5V14Z" fill="#E9EDC9"/>
+                              <path d="M9.5 14H8.5V15H9.5V14Z" fill="#E9EDC9"/>
+                              <path d="M10.5 14H9.5V15H10.5V14Z" fill="#E9EDC9"/>
+                              <path d="M11.5 14H10.5V15H11.5V14Z" fill="#E9EDC9"/>
+                              <path d="M14.5 14H13.5V15H14.5V14Z" fill="#E9EDC9"/>
+                              <path d="M16.5 14H15.5V15H16.5V14Z" fill="#E9EDC9"/>
+                              <path d="M18.5 14H17.5V15H18.5V14Z" fill="#E9EDC9"/>
+                              <path d="M20.5 14H19.5V15H20.5V14Z" fill="#E9EDC9"/>
+                              <path d="M11.5 15H10.5L10.5 16H11.5V15Z" fill="#E9EDC9"/>
+                              <path d="M18.5 15H17.5V16H18.5V15Z" fill="#E9EDC9"/>
+                              <path d="M21.5 15H20.5V16H21.5V15Z" fill="#E9EDC9"/>
+                              <path d="M22.5 15H21.5V16H22.5V15Z" fill="#E9EDC9"/>
+                              <path d="M2.5 16H1.5V17H2.5V16Z" fill="#E9EDC9"/>
+                              <path d="M3.5 16H2.5V17H3.5V16Z" fill="#E9EDC9"/>
+                              <path d="M4.5 16H3.5V17H4.5V16Z" fill="#E9EDC9"/>
+                              <path d="M5.5 16H4.5V17H5.5V16Z" fill="#E9EDC9"/>
+                              <path d="M6.5 16H5.5V17H6.5V16Z" fill="#E9EDC9"/>
+                              <path d="M7.5 16H6.5V17H7.5V16Z" fill="#E9EDC9"/>
+                              <path d="M8.5 16H7.5V17H8.5V16Z" fill="#E9EDC9"/>
+                              <path d="M10.5 16H9.5V17H10.5L10.5 16Z" fill="#E9EDC9"/>
+                              <path d="M11.5 16H10.5L10.5 17H11.5V16Z" fill="#E9EDC9"/>
+                              <path d="M13.5 16H12.5V17H13.5V16Z" fill="#E9EDC9"/>
+                              <path d="M15.5 16H14.5V17H15.5V16Z" fill="#E9EDC9"/>
+                              <path d="M18.5 16H17.5V17H18.5V16Z" fill="#E9EDC9"/>
+                              <path d="M19.5 16H18.5V17H19.5V16Z" fill="#E9EDC9"/>
+                              <path d="M20.5 16H19.5V17H20.5V16Z" fill="#E9EDC9"/>
+                              <path d="M2.5 17H1.5V18H2.5V17Z" fill="#E9EDC9"/>
+                              <path d="M8.5 17H7.5V18H8.5V17Z" fill="#E9EDC9"/>
+                              <path d="M11.5 17H10.5L10.5 18H11.5V17Z" fill="#E9EDC9"/>
+                              <path d="M13.5 17H12.5V18H13.5V17Z" fill="#E9EDC9"/>
+                              <path d="M16.5 17H15.5V18H16.5V17Z" fill="#E9EDC9"/>
+                              <path d="M17.5 17H16.5V18H17.5V17Z" fill="#E9EDC9"/>
+                              <path d="M18.5 17H17.5V18H18.5V17Z" fill="#E9EDC9"/>
+                              <path d="M21.5 17H20.5V18H21.5V17Z" fill="#E9EDC9"/>
+                              <path d="M22.5 17H21.5V18H22.5V17Z" fill="#E9EDC9"/>
+                              <path d="M2.5 18H1.5V19H2.5V18Z" fill="#E9EDC9"/>
+                              <path d="M4.5 18H3.5V19H4.5V18Z" fill="#E9EDC9"/>
+                              <path d="M5.5 18H4.5V19H5.5V18Z" fill="#E9EDC9"/>
+                              <path d="M6.5 18H5.5V19H6.5V18Z" fill="#E9EDC9"/>
+                              <path d="M8.5 18H7.5V19H8.5V18Z" fill="#E9EDC9"/>
+                              <path d="M13.5 18H12.5V19H13.5V18Z" fill="#E9EDC9"/>
+                              <path d="M15.5 18H14.5V19H15.5V18Z" fill="#E9EDC9"/>
+                              <path d="M16.5 18H15.5V19H16.5V18Z" fill="#E9EDC9"/>
+                              <path d="M21.5 18H20.5V19H21.5V18Z" fill="#E9EDC9"/>
+                              <path d="M2.5 19H1.5V20H2.5V19Z" fill="#E9EDC9"/>
+                              <path d="M4.5 19H3.5V20H4.5V19Z" fill="#E9EDC9"/>
+                              <path d="M5.5 19H4.5V20H5.5V19Z" fill="#E9EDC9"/>
+                              <path d="M6.5 19H5.5V20H6.5V19Z" fill="#E9EDC9"/>
+                              <path d="M8.5 19H7.5V20H8.5V19Z" fill="#E9EDC9"/>
+                              <path d="M10.5 19H9.5V20H10.5V19Z" fill="#E9EDC9"/>
+                              <path d="M12.5 19H11.5V20H12.5L12.5 19Z" fill="#E9EDC9"/>
+                              <path d="M15.5 19H14.5V20H15.5V19Z" fill="#E9EDC9"/>
+                              <path d="M17.5 19H16.5V20H17.5V19Z" fill="#E9EDC9"/>
+                              <path d="M18.5 19H17.5V20H18.5V19Z" fill="#E9EDC9"/>
+                              <path d="M20.5 19H19.5V20H20.5V19Z" fill="#E9EDC9"/>
+                              <path d="M2.5 20H1.5V21H2.5V20Z" fill="#E9EDC9"/>
+                              <path d="M4.5 20H3.5V21H4.5V20Z" fill="#E9EDC9"/>
+                              <path d="M5.5 20H4.5V21H5.5V20Z" fill="#E9EDC9"/>
+                              <path d="M6.5 20H5.5V21H6.5V20Z" fill="#E9EDC9"/>
+                              <path d="M8.5 20H7.5V21H8.5V20Z" fill="#E9EDC9"/>
+                              <path d="M11.5 20H10.5L10.5 21H11.5L11.5 20Z" fill="#E9EDC9"/>
+                              <path d="M12.5 20H11.5L11.5 21H12.5V20Z" fill="#E9EDC9"/>
+                              <path d="M17.5 20H16.5V21H17.5V20Z" fill="#E9EDC9"/>
+                              <path d="M18.5 20H17.5V21H18.5V20Z" fill="#E9EDC9"/>
+                              <path d="M22.5 20H21.5V21H22.5V20Z" fill="#E9EDC9"/>
+                              <path d="M2.5 21H1.5V22H2.5V21Z" fill="#E9EDC9"/>
+                              <path d="M8.5 21H7.5V22H8.5V21Z" fill="#E9EDC9"/>
+                              <path d="M10.5 21H9.5V22H10.5L10.5 21Z" fill="#E9EDC9"/>
+                              <path d="M11.5 21H10.5L10.5 22H11.5V21Z" fill="#E9EDC9"/>
+                              <path d="M12.5 21H11.5V22H12.5V21Z" fill="#E9EDC9"/>
+                              <path d="M15.5 21H14.5V22H15.5V21Z" fill="#E9EDC9"/>
+                              <path d="M17.5 21H16.5V22H17.5V21Z" fill="#E9EDC9"/>
+                              <path d="M18.5 21H17.5V22H18.5V21Z" fill="#E9EDC9"/>
+                              <path d="M19.5 21H18.5V22H19.5V21Z" fill="#E9EDC9"/>
+                              <path d="M2.5 22H1.5V23H2.5V22Z" fill="#E9EDC9"/>
+                              <path d="M3.5 22H2.5V23H3.5V22Z" fill="#E9EDC9"/>
+                              <path d="M4.5 22H3.5V23H4.5V22Z" fill="#E9EDC9"/>
+                              <path d="M5.5 22H4.5V23H5.5V22Z" fill="#E9EDC9"/>
+                              <path d="M6.5 22H5.5V23H6.5V22Z" fill="#E9EDC9"/>
+                              <path d="M7.5 22H6.5V23H7.5V22Z" fill="#E9EDC9"/>
+                              <path d="M8.5 22H7.5V23H8.5V22Z" fill="#E9EDC9"/>
+                              <path d="M10.5 22H9.5V23H10.5V22Z" fill="#E9EDC9"/>
+                              <path d="M11.5 22H10.5V23H11.5V22Z" fill="#E9EDC9"/>
+                              <path d="M12.5 22H11.5V23H12.5V22Z" fill="#E9EDC9"/>
+                              <path d="M17.5 22H16.5V23H17.5V22Z" fill="#E9EDC9"/>
+                              <path d="M18.5 22H17.5V23H18.5V22Z" fill="#E9EDC9"/>
+                              <path d="M21.5 22H20.5V23H21.5V22Z" fill="#E9EDC9"/>
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_300_3226">
+                                <rect width="24" height="24" fill="white" transform="translate(0 0.5)"/>
+                              </clipPath>
+                            </defs>
+                          </svg>
+                    </div>
+
+                    <!-- content -->
+                    <div class="w-fit h-auto gap-[0.5rem] flex flex-col items-start">
+                        <h4 class="text-left font-['space_grotesk'] md:text-xl text-lg font-bold text-[#1A1A19]">Generate QR code.</h4>
+                        <p class="text-left font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">A QR code is automatically generated for you when you shorten a link.</p>
+                    </div>
+                </div>
+                <!-- feature item -->
+                <div class="w-fit h-auto gap-[1rem] flex flex-row items-start justify-start">
+                    <!-- icon -->
+                    <div class="w-[3rem] h-[3rem] p-[0.75rem] flex justify-center items-center bg-[#E9EDC9] rounded-full border-[2px] border-[#1A1A19]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M5 3.5V19.5H21V21.5H3V3.5H5ZM19.9393 6.43934L22.0607 8.56066L16 14.6213L13 11.621L9.06066 15.5607L6.93934 13.4393L13 7.37868L16 10.379L19.9393 6.43934Z" fill="#1A1A19"/>
+                          </svg>
+                    </div>
+
+                    <!-- content -->
+                    <div class="w-fit h-auto gap-[0.5rem] flex flex-col items-start">
+                        <h4 class="text-left font-['space_grotesk'] md:text-xl text-lg font-bold text-[#1A1A19]">Analytics.</h4>
+                        <p class="text-left font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Keep track of the number of clicks on your link as well as where they’re coming from.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right content -image -->
+            <div class="md:w-[55%] md:h-[50rem] w-[100%] h-[25rem] drop-shadow-2xl">
+                <img src="./assets/Frame.svg" alt="Linkcut dashboard">
+            </div>
+
+        </section>       
 
     </main>
+
+    <footer class="w-full h-auto bg-[#525445] md:p-[6rem] px-[1.25rem] py-[5rem] flex flex-col gap-[3rem] items-center justify-center">
+    
+        <div class="w-fit h-auto flex flex-col gap-[1rem] items-center justify-center">
+            <h3 class="text-center font-['space_grotesk'] md:text-3xl text-2xl font-bold text-white">Start using linkcut today</h3>
+
+            <a href="signup.html" class="w-fit h-auto md:py-[1rem] md:px-[1.5rem] py-[0.75rem] px-[1rem] bg-[#CCD5AE] hover:bg-[#E9EDC9] text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19] hover:shadow-[2px_4px_16px_0px_rgba(0,0,0,0.25)]">Get started</a>
+        </div>
+
+        <div class="w-fit h-auto">
+            <p class="text-center font-['space_grotesk'] md:text-xl text-lg font-bold text-white">Built with ❤️ by <a class="underline text-[#F8F8F7]" href="https://www.linkedin.com/in/ahmadbashorun">Ahmad</a> and <a class="underline text-[#F8F8F7]" href="https://www.linkedin.com/in/olanrewaju-abegunde-6bab05114/">Lanre</a></p>
+        </div>
+
+    </footer>
     
 
 
