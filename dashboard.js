@@ -596,7 +596,7 @@ const getLinks = async function () {
     } else {
       linksContainer.innerHTML = `
       <div class="no-links">
-        <p>You have not created any links yet.</p>
+        <p class="font-['space_grotesk']">You have not created any links yet.</p>
       </div>
     `;
     
