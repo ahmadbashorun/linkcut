@@ -99,12 +99,12 @@ console.log(typeof destinationURL, typeof backHalf)
 
 //function to create a new link
 const createLink = async function(urlData) { 
-  const token = localStorage.getItem('token');
+  // const token = localStorage.getItem('token');
   const response = await fetch(`${base_api}/urls`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      Authorization: `Bearer ${token}`,
+      // Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(urlData),
   });
