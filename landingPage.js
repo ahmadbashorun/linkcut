@@ -47,7 +47,6 @@ createLinkForm.addEventListener('submit', async function(event) {
   
     //get all the links for the user
     const data = await getLinks();
-    console.log(data)
     if (data.data.userClicks.length < 1) {
         // Validate destination URL
         const destinationURL = destinationURLInput.value.trim();
