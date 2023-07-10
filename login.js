@@ -27,7 +27,7 @@ async function login() {
     let userEmail = document.getElementById('userEmail').value;
     let userPassword = document.getElementById('userPassword').value;
     const loginError = document.getElementById('loginError');
-    const response = await fetch('https://linkcut-aomz.onrender.com/auth/login', {
+    const response = await fetch('https://tame-gold-chipmunk-boot.cyclic.app/auth/login', {
         method: 'POST',
         body: JSON.stringify({ email: userEmail, password: userPassword }),
         headers: { 'Content-Type': 'application/json' },

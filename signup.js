@@ -96,7 +96,7 @@ function signup() {
         email: userEmail,
         password
     }
-    fetch('https://linkcut-aomz.onrender.com/auth/register', {
+    fetch('https://tame-gold-chipmunk-boot.cyclic.app/auth/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

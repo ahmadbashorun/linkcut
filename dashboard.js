@@ -1,5 +1,5 @@
 //base api
-const base_api = 'https://linkcut-aomz.onrender.com' 
+const base_api = 'https://tame-gold-chipmunk-boot.cyclic.app' 
 
 //eventlistener that runs one the page loads to add the user initials and user name to the nav bar and also redirect the user to the login page if not logged in
 document.addEventListener('DOMContentLoaded', async function () { 
@@ -99,12 +99,12 @@ console.log(typeof destinationURL, typeof backHalf)
 
 //function to create a new link
 const createLink = async function(urlData) { 
-  // const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token');
   const response = await fetch(`${base_api}/urls`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      // Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(urlData),
   });

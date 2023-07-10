@@ -37,7 +37,7 @@ async function verifyOtp(otp) {
     const email = urlParams.get('email');
     
     let errorMessage = document.getElementById("errorMessage");
-    const response = await fetch('https://linkcut-aomz.onrender.com/auth/verifyotp', {
+    const response = await fetch('https://tame-gold-chipmunk-boot.cyclic.app/auth/verifyotp', {
         method: 'POST',
         body: JSON.stringify({ otp: otp }),
         headers: { 'Content-Type': 'application/json' },
