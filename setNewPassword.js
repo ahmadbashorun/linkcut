@@ -40,7 +40,7 @@ async function setNewPassword() {
     const pwdErrorMessage = document.getElementById('setNewPwdError');
     const newPassword = document.getElementById('userNewPassword').value;
     const confirmNewPassword = document.getElementById('confirmNewPassword').value;
-    const response = await fetch(`https://linkcut-aomz.onrender.com/auth/resetpassword/?email=${encodeURIComponent(email)}`, {
+    const response = await fetch(`https://tame-gold-chipmunk-boot.cyclic.app/auth/resetpassword/?email=${encodeURIComponent(email)}`, {
         method: 'PUT',
         body: JSON.stringify({password: newPassword, confirmPassword: confirmNewPassword }),
         headers: { 'Content-Type': 'application/json' },

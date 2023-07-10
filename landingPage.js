@@ -18,21 +18,8 @@ function closeNavModal(){
 
 closeNavmenu.addEventListener('click', closeNavModal)
 
-const base_api = 'https://linkcut-aomz.onrender.com'
+const base_api = 'https://tame-gold-chipmunk-boot.cyclic.app'
 
-//an event listener to listen for when the page loads
-window.addEventListener('load', async () => { 
-    //call the homepage api
-    await getHomepage();
-})
-
-const getHomepage = async () => { 
-    const response = await fetch(`${base_api}`, {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-    });
-    const data = await response.json();
-}
 
 
 //creating a new link
@@ -47,7 +34,7 @@ createLinkForm.addEventListener('submit', async function(event) {
   
     //get all the links for the user
     const data = await getLinks();
-    if (data.data.userClicks.length < 1) {
+    if (data.urls.length < 1) {
         // Validate destination URL
         const destinationURL = destinationURLInput.value.trim();
         if (destinationURL === '') {
@@ -75,12 +62,12 @@ createLinkForm.addEventListener('submit', async function(event) {
         const urlData = {
             url: destinationURL,
             slug: backHalf,
+            user: data.userId
         }
   
         //call api to create link
-        const data = await createLink(urlData)
-
-        if (data.error) {
+        const datas = await createLink(urlData)
+        if (datas.error) {
             // Show error message
             showError(destinationURLInput, data.error);
             setTimeout(function () {
@@ -91,7 +78,7 @@ createLinkForm.addEventListener('submit', async function(event) {
         } else {
             // Show success message
             const successMessage = document.getElementById('successMessage');
-            successMessage.textContent = `Link created: ${data.newUrl.urlCode}`;
+            successMessage.textContent = `Link created: ${datas.newUrl.urlCode}`;
             setTimeout(function () {
                 successMessage.textContent = '';
             }, 2000)
@@ -104,12 +91,12 @@ createLinkForm.addEventListener('submit', async function(event) {
             const newLink = document.getElementById('newLink');
             newLink.classList.remove('hidden');
             const viewUrlCode = document.getElementById('viewUrlCode');
-            viewUrlCode.textContent = data.newUrl.urlCode;
+            viewUrlCode.textContent = datas.newUrl.urlCode;
 
             //copy the link to clipboard
             const copyButton = document.getElementById('copyUrlCode');
             copyButton.addEventListener('click', function () { 
-                const urlCode = data.newUrl.urlCode;
+                const urlCode = datas.newUrl.urlCode;
                 navigator.clipboard.writeText(urlCode);
                 
                 //display the copied message
@@ -121,14 +108,14 @@ createLinkForm.addEventListener('submit', async function(event) {
             });
         }
         
-    } else if(data.data.userClicks.length >= 1) {
+    } else if(data.urls.length >= 1) {
         window.location.href = 'login.html';
     }
 });
 
 //function to create a new link
 const createLink = async function(urlData) { 
-  const response = await fetch(`${base_api}/urls`, {
+  const response = await fetch(`${base_api}/urls/generate`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
@@ -165,7 +152,7 @@ return backHalfRegex.test(backHalf);
   
 //function to get all links for a user
 const getLinks = async function () { 
-    const response = await fetch(`${base_api}/user/clicks`, {
+    const response = await fetch(`${base_api}/url/unregistered`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json',

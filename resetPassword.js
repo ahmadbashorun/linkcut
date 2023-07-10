@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 async function resetPassword() { 
   let userEmail = document.getElementById('userEmail').value;
     const errorMessage = document.getElementById('errorMessage');
-    const response = await fetch('https://linkcut-aomz.onrender.com/auth/forgotpassword', {
+    const response = await fetch('https://tame-gold-chipmunk-boot.cyclic.app/auth/forgotpassword', {
         method: 'POST',
         body: JSON.stringify({ email: userEmail }),
         headers: { 'Content-Type': 'application/json' },
