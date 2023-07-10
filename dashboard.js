@@ -75,6 +75,9 @@ console.log(typeof destinationURL, typeof backHalf)
 
   if (data.error) { 
     // Show error message
+    if (data.error = 'Duplicate key value entered') {
+      data.error = 'Back half or Url already exists'
+    }
     showError(destinationURLInput, data.error);
     setTimeout(function () { 
       const errorElement = destinationURLInput.nextElementSibling;
