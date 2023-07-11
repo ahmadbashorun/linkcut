@@ -41,7 +41,11 @@ createLinkForm.addEventListener('submit', async function(event) {
   event.preventDefault(); // Prevent form submission
   
   // Validate destination URL
-  const destinationURL = destinationURLInput.value.trim();
+  let destinationURL = destinationURLInput.value.trim();
+  // if (destinationURL.startsWith("www")){
+  //   destinationURL = `https//${destinationURL}`
+  // }
+  console.log(destinationURL)
   if (destinationURL === '') {
     // Show error message
     showError(destinationURLInput, 'Destination URL is required');
@@ -119,7 +123,7 @@ const createLink = async function(urlData) {
 
 function isValidURL(url) {
   // Use a regular expression to validate URL format
-  const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+  const urlRegex = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
   return urlRegex.test(url);
 }
 
@@ -724,9 +728,9 @@ async function createLinks(links) {
     linkElement.classList.add('md:w-[30%]', 'w-full', 'h-auto', 'p-[1.25rem]', 'flex', 'flex-col', 'md:gap-[0.75rem]', 'gap-[0.75rem]', 'bg-[#FFF]', 'link-card');
     linkElement.innerHTML = `
     <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
-      <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
-          <a href="#" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]">${link.urlId.url}</a>
-          <a> <i data-url="${link.urlId.url}" class="copyButton fa-regular fa-copy" style="color: #1a1a19;"></i></a>
+      <div class="w-[70%] h-auto flex flex-row gap-[0.75rem] items-center">
+          <a href='${link.urlId.urlCode}' target="_blank" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19] truncate">${link.urlId.urlCode}</a>
+          <a class="cursor-pointer"> <i data-url="${link.urlId.urlCode}" class="copyButton fa-regular fa-copy" style="color: #1a1a19;"></i></a>
         <div id="copyMessage" class="hidden w-full text-center font-['space_grotesk'] md:text-sm text-base  mt-2">Copied</div>
       </div>
 
@@ -738,7 +742,7 @@ async function createLinks(links) {
     </div>
 
     <div class="w-full h-auto flex flex-col gap-[0.5rem]">
-        <a href="" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">${link.urlId.urlCode}</a>
+        <a href="${link.urlId.url}" target="_blank" class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19] underline truncate">${link.urlId.url}</a>
         <p class="text-left font-['space_grotesk'] text-base font-normal text-[#1A1A19]">Created on ${formatDate(link.urlId.created_at)}</p>
 
         <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
@@ -754,13 +758,13 @@ async function createLinks(links) {
 
 const copY = async function (e) {
   const url = e.target.dataset.url
-    // const copyMessage = e.target.parentElement.parentElement.querySelector('#copyMessage')
-    // copyMessage.classList.remove('hidden')
-    // copyMessage.classList.add('block')
-    // setTimeout(() => {
-    //   copyMessage.classList.remove('block')
-    //   copyMessage.classList.add('hidden')
-    // }, 2000);
+    const copyMessage = e.target.parentElement.parentElement.querySelector('#copyMessage')
+    copyMessage.classList.remove('hidden')
+    copyMessage.classList.add('block')
+    setTimeout(() => {
+      copyMessage.classList.remove('block')
+      copyMessage.classList.add('hidden')
+    }, 2000);
     await navigator.clipboard.writeText(url)
 }
 
@@ -769,13 +773,13 @@ const copY = async function (e) {
 const copyUrlCode = document.querySelector('#copyUrlCode')
 copyUrlCode.addEventListener('click', async function (e) { 
   const urlCode = document.getElementById('viewUrlCode').textContent
-  // const copyMessage = document.querySelector('#copYMessage')
-  // copyMessage.classList.remove('hidden')
-  // copyMessage.classList.add('block')
-  // setTimeout(() => {
-  //   copyMessage.classList.remove('block')
-  //   copyMessage.classList.add('hidden')
-  // }, 2000);
+  const copyMessage = document.querySelector('#copYMessage')
+  copyMessage.classList.remove('hidden')
+  copyMessage.classList.add('block')
+  setTimeout(() => {
+    copyMessage.classList.remove('block')
+    copyMessage.classList.add('hidden')
+  }, 2000);
   await navigator.clipboard.writeText(urlCode)
 })
 
@@ -783,12 +787,12 @@ copyUrlCode.addEventListener('click', async function (e) {
 const copyQrCode = document.querySelector('#copyQrCode')
 copyQrCode.addEventListener('click', async function (e) { 
   const qrCode = document.getElementById('qrCode').src
-  // const copyMessage = document.querySelector('#copYMessage')
-  // copyMessage.classList.remove('hidden')
-  // copyMessage.classList.add('block')
-  // setTimeout(() => {
-  //   copyMessage.classList.remove('block')
-  //   copyMessage.classList.add('hidden')
-  // }, 2000);
+  const copyMessage = document.querySelector('#copyMessageQR')
+  copyMessage.classList.remove('hidden')
+  copyMessage.classList.add('block')
+  setTimeout(() => {
+    copyMessage.classList.remove('block')
+    copyMessage.classList.add('hidden')
+  }, 2000);
   await navigator.clipboard.writeText(qrCode)
 })

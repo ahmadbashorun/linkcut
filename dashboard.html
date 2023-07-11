@@ -137,7 +137,7 @@
                     
                     <div class="form-inputs w-full h-auto items-start flex flex-col gap-[0.25rem]">
                         <label for="destinationURL" class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#1A1A19]">Destination URL*</label>
-                        <input type="url" name="destinationURL" id="destinationURL" placeholder="Destination URL" class="w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
+                        <input type="text" name="destinationURL" id="destinationURL" placeholder="Destination URL" class="w-full h-auto p-[0.5rem] rounded-lg border-[1px] border-[#8F9399] focus:outline-4 focus:outline-[#CCD5AE] focus:outline-offset-4 font-['space_grotesk']">
                         <p class="text-center font-['space_grotesk'] md:text-lg text-base font-normal text-[#EB5757]"></p>
                     </div>
 
@@ -216,8 +216,8 @@
         <div class="md:max-h-[80vh] h-screen overflow-y-auto bg-[#F8F8F7] md:w-[70%] w-full md:p-[1.5rem] px-[1.25rem] py-[4rem] shadow-lg">
             <!-- Modal Content -->
             <div class=" flex flex-col md:justify-center gap-[3rem] " >
-                <div class="w-fit h-auto self-end sticky top-0 z-[80] bg-[#F8F8F7]">
-                    <i id="closeLinkDetails" class="fa-solid fa-circle-xmark text-[#1A1A19] cursor-pointer"></i>
+                <div class="w-full h-auto flex justify-end sticky top-0 z-[80] bg-[#F8F8F7]">
+                    <i id="closeLinkDetails" class="fa-solid fa-circle-xmark text-[#1A1A19] text-end cursor-pointer"></i>
                 </div>
 
                 <div class="w-full h-auto flex flex-col gap-[1.25rem]">
@@ -226,10 +226,11 @@
                     <div class="w-full h-auto flex flex-col gap-[1rem]">
                         <div class="w-full h-auto flex md:flex-row justify-between gap-[0.5rem] items-center">
                             <div class="w-fit h-auto flex flex-row gap-[0.75rem] items-center">
-                                <a href="#" id="viewUrlCode" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19]"></a>
-                                <a id="copyUrlCode"><i class="copyButton fa-regular fa-copy text-[#1a1a19]"></i></a>
+                                <a href="#" id="viewUrlCode" class="text-center font-['space_grotesk'] md:text-lg text-base font-bold text-[#1A1A19] cursor-pointer"></a>
+                                <a id="copyUrlCode"><i class="copyButton fa-regular fa-copy text-[#1a1a19] cursor-pointer"></i></a>
+                                <div id="copYMessage" class="hidden w-fit text-center font-['space_grotesk'] md:text-sm text-base  mt-2 cursor-pointer">Copied</div>
                             </div>
-                            <div id="copYMessage" class="hidden w-full text-center font-['space_grotesk'] md:text-sm text-base  mt-2">Copied</div>
+                            
 
             
                             <div class="w-fit h-auto flex flex-row gap-[0.8rem]">
@@ -254,6 +255,7 @@
                                     <div class="w-fit h-auto flex flex-row gap-[0.25rem] items-center cursor-pointer">
                                         <p href="#" class="text-center font-['space_grotesk'] text-base font-normal text-[#525445]">Copy</p>
                                         <a id="copyQrCode"><i class="fa-regular copyButton fa-copy text-[#525445]"></i></a>
+                                        <div id="copyMessageQR" class="hidden w-fit text-center font-['space_grotesk'] md:text-sm text-base  mt-2 cursor-pointer">Copied</div>
                                     </div>
                                     <div id="downloadQrCode" class="w-fit h-auto flex flex-row gap-[0.25rem] items-center cursor-pointer">
                                             <p href="#" class="text-center font-['space_grotesk'] text-base font-normal text-[#525445]">Save</p>
